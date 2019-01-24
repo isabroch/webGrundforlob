@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+
+img.fullWidth {
+  width: 100%;
+  height: auto;
+}
+
+/* Google font Amatic SC linked in index.html*/
+h1, h2, footer {
+  font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  margin: 0;
+  color: #a07c44;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.fed {
+  font-weight: bold;
+}
+
+.blue {
+  color: #0DAACC;
+}
+
+.green {
+  color: #068E16;
+}
+
+.red {
+  color: #ee3729;
+}
+
+.pink {
+  color: #d34287;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  border-top: solid 1px #fbd68a;
+}
+
+footer a {
+  color: #a0673b;
+  font-size: 2em;
+}

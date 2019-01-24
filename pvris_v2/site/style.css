@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*importing "rock salt" google font*/
+@import url("https://fonts.googleapis.com/css?family=Rock+Salt");
+
+/*reset these properties for better style control*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #101319;
+  overflow-x: hidden;
+}
+
+/*giving "rock salt" font a class for easy application*/
+.titleFont {
+  font-family: "Rock Salt", cursive;
+}
+
+/*set content to max 960px width*/
+#wrapper,
+nav {
+  max-width: 960px;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+  margin: 0 auto;
+}
+
+/*header, with h1 that overlaps the background image*/
+header {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 3.5em;
+  position: absolute;
+  text-align: center;
+  top: 40px;
+  width: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(10%, #101319),
+    color-stop(50%, rgba(16, 19, 25, 0.6)),
+    color-stop(90%, #101319)
+  );
+  background: linear-gradient(
+    to right,
+    #101319 10%,
+    rgba(16, 19, 25, 0.6) 50%,
+    #101319 90%
+  );
+  color: #f3356a;
+  font-weight: normal;
+  text-shadow: 2px 4px black;
+}
+
+/*is applied to a small transparent image placeholder. the placeholder is there to create an alt tag.*/
+.topImage {
+  width: 100%;
+  height: 500px;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(50%, transparent),
+      to(#101319)
+    ),
+    url("images/groupPvris.jpg") no-repeat top center / cover;
+  background: linear-gradient(to bottom, transparent 50%, #101319 100%),
+    url("images/groupPvris.jpg") no-repeat top center / cover;
+}
+
+/*styling main content*/
+main {
+  color: #d8dbdc;
+  margin: 70px 30px 30px;
+  font-size: 1em;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  color: #f3356a;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
+}
+
+span.titleFont {
+  font-size: 70%;
+  line-height: 0;
+  position: relative;
+  padding-left: 5px;
+  bottom: 2px;
+}
+
+/*specifies spans with the titleFont class*/
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+/*styling quotations and album/emphasized words (only appears in maind right now)*/
+q {
+  color: #df386e;
+}
+
+em {
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+/*image float to right*/
+.floatRight {
+  display: none;
+  min-width: 200px;
+  width: 35%;
+  max-width: 310px;
+  float: right;
+  margin: 20px;
+}
+
+/*footer navigation*/
+footer {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(189, 40, 82, 0.1)),
+    color-stop(40%, rgba(189, 40, 82, 1)),
+    color-stop(60%, rgba(189, 40, 82, 1)),
+    color-stop(99%, rgba(189, 40, 82, 0.1))
+  );
+  background: linear-gradient(
+    to right,
+    rgba(189, 40, 82, 0.1) 0%,
+    rgba(189, 40, 82, 1) 40%,
+    rgba(189, 40, 82, 1) 60%,
+    rgba(189, 40, 82, 0.1) 99%
+  );
+  margin-top: 50px;
+}
+
+nav {
+  padding: 30px 0;
+  text-align: center;
+  font-weight: 400;
+  color: #fbfbfb;
+}
+
+/*links*/
+a,
+a:visited {
+  color: #fbfbfb;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* youtube video */
+/* needs two wrappers. first level wrapper controls the width. second level wrapper creates the aspect ratio (16:9). iframe holds the youtube video. */
+#video {
+  display: none;
+}
+
+/* media queries
+from top to bottom
+300px and larger
+530px and larger
+726px and larger*/
+/* video starts showing now  */
+@media only screen and (min-width: 300px) {
+  #video {
+    display: block;
+    min-width: 300px;
+    max-width: 725px;
+    margin: 0 auto;
+  }
+
+  #video div {
+    padding-top: 56.25%;
+    position: relative;
+    margin-bottom: 1.25em;
+  }
+
+  #video iframe {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* image of pvris on stage shows now */
+@media only screen and (min-width: 530px) {
+  .floatRight {
+    display: block;
+  }
+}
+
+/* margin for video grows to account for larger screen size */
+@media only screen and (min-width: 726px) {
+  #video {
+    margin: 45px auto;
+  }
+}
+
+/* animations */
+
+/* animation for title background, stretches out from left */
+@keyframes titleBackground {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* is applied to h1 */
+h1 {
+  /* animation shorthand from left to right
+  name, duration, timing-function, delay (skipped), iteration-count, direction (skipped), fill-mode */
+  animation: titleBackground 1s cubic-bezier(0.28, 0.26, 0.37, 1.19) forwards;
+}
+
+/* animation for actual title text, fades in and starts after titlebackground */
+@keyframes titleText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* is applied to the span inside h1 so that the text moves separate from title background */
+h1 span {
+  animation: titleText 1s cubic-bezier(0.28, 0.26, 0.37, 1.19) 0.6s backwards;
+}
