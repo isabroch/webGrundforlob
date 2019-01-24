@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #101319;
   overflow-x: hidden;
@@ -37,24 +42,18 @@ header {
 
 h1 {
   font-size: 3.5em;
+  z-index: 5;
   position: absolute;
   text-align: center;
   top: 40px;
   width: 100%;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(10%, #101319),
-    color-stop(50%, rgba(16, 19, 25, 0.6)),
-    color-stop(90%, #101319)
-  );
-  background: linear-gradient(
-    to right,
-    #101319 10%,
-    rgba(16, 19, 25, 0.6) 50%,
-    #101319 90%
-  );
+  background: linear-gradient(to right, #101319 10%, rgba(16, 19, 25, 0.6) 50%, #101319 90%);
+}
+
+/* make sure title link is styled differently from other links */
+a.titleLink,
+a.titleLink:hover,
+a.titleLink:visited {
   color: #f3356a;
   font-weight: normal;
   text-shadow: 2px 4px black;
@@ -64,16 +63,7 @@ h1 {
 .topImage {
   width: 100%;
   height: 500px;
-  background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(50%, transparent),
-      to(#101319)
-    ),
-    url("images/groupPvris.jpg") no-repeat top center / cover;
-  background: linear-gradient(to bottom, transparent 50%, #101319 100%),
-    url("images/groupPvris.jpg") no-repeat top center / cover;
+  background: linear-gradient(to bottom, transparent 50%, #101319 100%), url("images/groupPvris.jpg") no-repeat top center / cover;
 }
 
 /*styling main content*/
@@ -127,22 +117,7 @@ em {
 
 /*footer navigation*/
 footer {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(189, 40, 82, 0.1)),
-    color-stop(40%, rgba(189, 40, 82, 1)),
-    color-stop(60%, rgba(189, 40, 82, 1)),
-    color-stop(99%, rgba(189, 40, 82, 0.1))
-  );
-  background: linear-gradient(
-    to right,
-    rgba(189, 40, 82, 0.1) 0%,
-    rgba(189, 40, 82, 1) 40%,
-    rgba(189, 40, 82, 1) 60%,
-    rgba(189, 40, 82, 0.1) 99%
-  );
+  background: linear-gradient(to right, rgba(189, 40, 82, 0.1) 0%, rgba(189, 40, 82, 1) 40%, rgba(189, 40, 82, 1) 60%, rgba(189, 40, 82, 0.1) 99%);
   margin-top: 50px;
 }
 
@@ -204,6 +179,18 @@ from top to bottom
   .floatRight {
     display: block;
   }
+
+  /* making sticky top */
+  .sticky {
+    position: sticky;
+    top: 0;
+    margin-top: 40px;
+  }
+
+  header {
+    margin-top: -175px;
+    /*offsetting from h1*/
+  }
 }
 
 /* margin for video grows to account for larger screen size */
@@ -245,6 +232,6 @@ h1 {
 }
 
 /* is applied to the span inside h1 so that the text moves separate from title background */
-h1 span {
-  animation: titleText 1s cubic-bezier(0.28, 0.26, 0.37, 1.19) 0.6s backwards;
+h1 a {
+  animation: titleText 1s cubic-bezier(0.28, 0.26, 0.37, 1.19) .6s backwards;
 }
