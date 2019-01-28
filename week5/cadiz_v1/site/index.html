@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cadiz</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html, body {
+			margin: 0;
+			padding: 0;
+
+		}
+
+		#wrapper {
+			max-width: 1440px;
+			margin: 0 auto;
+							background-color: #000;
+
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		.a,
+		.b,
+		.c {
+			width: 31.33%;
+			float: left;
+		}
+
+		.d,
+		.e {
+			width: 48%;
+			float: left;
+		}
+
+		.f {
+			width: 98%;
+		}
+
+		.foto {
+			padding: 0.5%;
+			border: solid 1px #fff;
+			margin: 1%;
+		}
+
+/* adding psuedo element to clear:both easily */
+		.clearfix::after {
+			content: ""; /* without this, there's no psuedo element */
+			display: table;
+			clear: both;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<section class="clearfix">
+			<div class="foto a"><img src="images/cadiz1.jpg" alt="Cadiz"></div>
+			<div class="foto b"><img src="images/cadiz2.jpg" alt="Cadiz"></div>
+			<div class="foto c"><img src="images/cadiz3.jpg" alt="Cadiz"></div>
+		</section>
+		<section class="clearfix">
+			<div class="foto d"><img src="images/cadiz4.jpg" alt="Cadiz"></div>
+			<div class="foto e"><img src="images/cadiz5.jpg" alt="Cadiz"></div>
+		</section>
+		<section class="clearfix">
+			<div class="foto f"><img src="images/cadiz6.jpg" alt="Cadiz"></div>
+		</section>
+
+	</div> <!-- end wrapper -->
+</body>
+
+</html>
