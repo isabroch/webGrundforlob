@@ -9,7 +9,8 @@
 			box-sizing: border-box;
 		}
 
-		html, body {
+		html,
+		body {
 			margin: 0;
 			padding: 0;
 
@@ -18,7 +19,8 @@
 		#wrapper {
 			max-width: 1440px;
 			margin: 0 auto;
-							background-color: #000;
+			background-color: #000;
+			overflow: hidden; /* fixes collapsing margin at bottom */
 
 		}
 
@@ -50,10 +52,11 @@
 			margin: 1%;
 		}
 
-/* adding psuedo element to clear:both easily */
+		/* adding psuedo element to clear:both easily */
 		.clearfix::after {
-			content: ""; /* without this, there's no psuedo element */
-			display: table;
+			content: "";
+			/* without this, there's no psuedo element */
+			display: table; /* need to set a display for psuedo to show. block/table/etc. any sort of block display style will prevent margin collapse */
 			clear: both;
 		}
 	</style>
@@ -71,9 +74,7 @@
 			<div class="foto d"><img src="images/cadiz4.jpg" alt="Cadiz"></div>
 			<div class="foto e"><img src="images/cadiz5.jpg" alt="Cadiz"></div>
 		</section>
-		<section class="clearfix">
 			<div class="foto f"><img src="images/cadiz6.jpg" alt="Cadiz"></div>
-		</section>
 
 	</div> <!-- end wrapper -->
 </body>
