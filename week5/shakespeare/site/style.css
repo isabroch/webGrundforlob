@@ -16,7 +16,7 @@
 
   header {
     text-align: center;
-    margin-bottom: 2.5em;
+    margin-bottom: 1.6em;
   }
 
   /* clears after main to allow footer space */
@@ -28,16 +28,21 @@
 
   footer {
     text-align: center;
-    margin-top: 2.5em;
+    margin-top: 2.3em;
   }
 
 /* title font and color */
 h1 {
   color: #660000;
   font-family: 'Modern Antiqua', cursive;
-  font-size: 3.3em;
+  font-size: 3.5em;
   font-weight: normal;
   padding: 0.5% 0;
+  margin: 0.5em 0 0.4em;
+}
+
+img {
+  width: 100%;
 }
 
 /* left and right colums */
@@ -45,7 +50,7 @@ h1 {
     width: 49%;
     float: left;
     box-sizing: border-box;
-    padding: 1%;
+    padding: 0.5% 1% 1% 1%;
     border: 1px solid black;
     line-height: 1.5;
   }
@@ -57,7 +62,7 @@ h1 {
 
 /* text styles in columns */
   p {
-    margin: 0 0 1em 0;
+    margin: 0 0 1.4em 0;
   }
 
   /* last paragraph of last section in each div should have no bottom margin */
@@ -66,17 +71,17 @@ h1 {
   }
 
   strong, h2 {
-    font-size: 1.1em;
+    font-size: 1.16em;
   }
 
   h2 {
-    margin: 0 0 1em 0;
+    margin: 0 0 1.3em 0;
   }
 
 /* text styles in footer */
   a {
     display: block;
-    margin: 2em 0 3em 0;
+    margin: 2em 0 4em 0;
     text-decoration-color: #575757;
     color: black;
   }
