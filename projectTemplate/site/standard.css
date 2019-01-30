@@ -1,0 +1,30 @@
+/* resetting styles */
+body,
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* no horizontal scrolling issues */
+body {
+  overflow-x: hidden;
+}
+
+/* making images inline and responsive to their container/wrapper */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* when using floats, adds clear element */
+/* .clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
