@@ -6,4 +6,51 @@ body {
 
 #wrapper {
   max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header and all contained styles */
+header {
+  text-align: center;
+  color: #003399;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-top: 1em;
+}
+
+header p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* Article and all contained styles */
+
+.text_1 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.text_2 {
+  padding-bottom: 20px;
+}
+
+h2 {
+  padding: 0.75em 0;
+}
+
+/* Centering the middle most part */
+
+.col10 {
+  float: none;
+  margin: 0 auto;
+}
+
+.col6.left {
+  padding-left: 0;
+}
+
+.col6.right {
+  padding-right: 0;
 }

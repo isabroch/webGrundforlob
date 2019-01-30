@@ -12,6 +12,11 @@ body, html {
 p{
 	padding-bottom:1em;
 }
+
+.clearfix {
+	clear: both;
+}
+
 .clearfix::after{
 	content:"";
 	display:table;
