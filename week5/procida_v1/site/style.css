@@ -1,0 +1,108 @@
+
+/* Reseting styles */
+body,
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Site container styles */
+#wrapper {
+  max-width: 960px;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+/* Site font */
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Column styles */
+/* 12 column setup
+1 column = 8,3333%
+
+Column widths being used:
+  4        5      7      12
+33,33%  41,67%  58,33%  100,00% */
+.col {
+  padding: .5%;
+  float: left;
+}
+
+.c4 {
+  width: 33.33%;
+}
+
+.c5 {
+  width: 41.67%;
+}
+
+.c7 {
+  width: 58.33%;
+}
+
+/* Starts as new row with clear: both */
+section:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Header and all contained styles */
+header {
+  text-align: center;
+  color: #003399;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-top: 1em;
+}
+
+header p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* Main/Article and all contained styles */
+article p {
+  font-size: 0.875em;
+  padding-bottom: 1.5em;
+  line-height: 1.2em;
+}
+
+article h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.75em;
+}
+
+article h3 {
+  font-size: 1.17em;
+}
+
+.hPadding {
+  padding-top: 0.68em;
+}
+
+
+/* Footer and all contained styles */
+footer {
+  margin-top: 281%;
+}
+
+/* General or all styles */
+img {
+  /* fill the container to max width while keeping ratio */
+  width: 100%;
+  height: auto;
+
+  /* no awkward spacing underneath due to inline display */
+  display: block;
+}
