@@ -1,0 +1,9 @@
+/* columns, resetting styles, p spacing, images, and clearfix defined in standard */
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+#wrapper {
+  max-width: 960px;
+}

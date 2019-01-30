@@ -1,9 +1,13 @@
 @charset "UTF-8";
 /* CSS Document */
+body, html {
+	box-sizing: border-box;
+}
+
 *{
 	margin:0;
 	padding:0;
-	box-sizing:border-box;
+	box-sizing:inherit;
 }
 p{
 	padding-bottom:1em;
@@ -17,6 +21,7 @@ p{
 img{
 	width:100%;
 	height:auto;
+	display: block;
 }
 /* KOLONNERNE: */
 [class*="col"] {
