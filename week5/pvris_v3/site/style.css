@@ -1,10 +1,16 @@
 /* declaring variables */
 :root {
-  --green: #36b656;
   --black: #121113;
-  --gray: #7c6572;
+  --gray: #322430;
   --white: #edf0e3;
-  --lightGreen: #66d281;
+
+  --spotifyGreen: #36b656;
+  --spotifyLightGreen: #66d281;
+  --spotifyDarkGreen: #36b656;
+
+  --button: #d09656;
+  --buttonLight: #deac71;
+  --buttonDark: #cb8b48;
 
   --font: 'Roboto', sans-serif;
 
@@ -70,7 +76,7 @@ main img.maxWidth {
 }
 
 /* media query for this section */
-@media screen and (min-width:960px) {
+@media screen and (min-width:970px) {
   main {
     margin-top: 50px;
   }
@@ -147,6 +153,13 @@ main img.maxWidth {
   }
 
 }
+
+@media screen and (max-width:799px) {
+  #video.smallFile, img.smallFile {
+    margin: 0 -10px;
+    width: calc(100% + 20px);
+  }
+}
 /* END video and music style section */
 
 /* START album section */
@@ -202,14 +215,21 @@ a.spotifyLink {
   padding: 10px 35px;
   text-decoration: none;
   color: var(--black);
-  background: var(--green);
+  background: var(--spotifyGreen);
   font-size: 1.2em;
   border-radius: 25px;
-  border: 2px outset var(--lightGreen);
+  border: 2px outset var(--spotifyLightGreen);
+    transition: 0.1s;
 }
 
 a.spotifyLink:hover {
-  background: var(--lightGreen);
+  background: var(--spotifyLightGreen);
+  transform: scale(1.05);
+}
+
+a.spotifyLink:active {
+    background: var(--spotifyDarkGreen);
+    transform: scale(0.95);
 }
 
 /* media query for this section */
@@ -237,6 +257,9 @@ a.spotifyLink:hover {
   background-position: center;
   height: 500px;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  width: 100%;
+  padding: 10px;
+  margin: 0;
 }
 
 #tour {
@@ -261,33 +284,32 @@ a.spotifyLink:hover {
   text-decoration: line-through;
 }
 
-.old a {
+.old a, .current a {
   display: inline-block;
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
   text-align: center;
   width: 100%;
-  background: var(--green);
+  background: var(--button);
   padding: 5px 10px;
   border-radius: 5px;
-  border: 2px outset var(--lightGreen);
+  border: 2px outset var(--buttonLight);
+  transition: 0.1s;
+}
+
+.old a:hover, .current a:hover {
+  background: var(--buttonLight);
+  transform: scale(1.05);
+}
+
+.old a:active, .current a:active {
+  background: var(--buttonDark);
+  transform: scale(0.95);
 }
 
 .old a::before {
   content: "Were you there?";
   display: inline;
-}
-
-.current a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--white);
-  text-align: center;
-  width: 100%;
-  background: var(--green);
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 2px outset var(--lightGreen);
 }
 
 .current a::before {
@@ -349,6 +371,9 @@ a.spotifyLink:hover {
 footer {
   width: 100%;
   background: var(--black);
+  box-shadow: 0 -5px 40px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
 }
 
 .navwrapper {
