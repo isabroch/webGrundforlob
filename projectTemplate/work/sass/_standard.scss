@@ -1,3 +1,5 @@
+/* Standard styling i.e. resetting styles and image styles */
+
 /* resetting styles */
 body,
 html {
@@ -21,10 +23,3 @@ img {
   height: auto;
   display: block;
 }
-
-/* when using floats, adds clear element */
-/* .clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-} */
