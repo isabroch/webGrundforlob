@@ -1,25 +1,26 @@
 /* Standard styling i.e. resetting styles and image styles */
 
 /* resetting styles */
-body,
-html {
-  box-sizing: border-box;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-/* no horizontal scrolling issues */
-body {
-  overflow-x: hidden;
+body,
+html {
+  box-sizing: border-box;
 }
 
-/* making images inline and responsive to their container/wrapper */
+/* no horizontal scrolling issues, smooth scrolling on in page links */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* making images inline-block and responsive to their container/wrapper */
 img {
   width: 100%;
   height: auto;
-  display: block;
+  display: inline-block;
 }
