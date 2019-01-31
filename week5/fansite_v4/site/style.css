@@ -1,26 +1,27 @@
 /* Standard styling i.e. resetting styles and image styles */
 /* resetting styles */
-body,
-html {
-  box-sizing: border-box;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-/* no horizontal scrolling issues */
-body {
-  overflow-x: hidden;
+body,
+html {
+  box-sizing: border-box;
 }
 
-/* making images inline and responsive to their container/wrapper */
+/* no horizontal scrolling issues, smooth scrolling on in page links */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* making images inline-block and responsive to their container/wrapper */
 img {
   width: 100%;
   height: auto;
-  display: block;
+  display: inline-block;
 }
 
 /* Columns CSS */
@@ -36,7 +37,23 @@ img {
   --totalCols: 12;
   --widthOf1: calc(100% / var(--numCols));
   float: left;
-  padding: 0.5%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+[class^="col"].-noPad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[class^="col"].-leftPad {
+  padding-left: 0.5%;
+  padding-right: 0;
+}
+
+[class^="col"].-rightPad {
+  padding-left: 0;
+  padding-right: 0.5%;
 }
 
 .col1 {
@@ -87,3 +104,32 @@ img {
   float: none;
   width: calc(var(--widthOf1) * 12);
 }
+
+/* Main CSS */
+/* Variables */
+:root {
+  /* Fonts */
+  --font: 'Roboto', sans-serif;
+  --titleFont: "Rock Salt", cursive;
+  /*Colors */
+  --black: #161517;
+  --white: #f7f3ec;
+}
+
+/* Header styles */
+/* Main styles */
+/* Fun facts about Lynn section */
+.funFact__icon.-pisces {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 900;
+  font-size: 1.2em;
+  font-family: "arial unicode ms","Lucida Sans Unicode",sans-serif;
+}
+
+/* Album section */
+/* Site footer section */

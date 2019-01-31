@@ -1,16 +1,67 @@
 // Standard styling of things
 @import 'standard';
+
 // Column styling using floats
 @import 'col';
+
+/* Main CSS */
 
 /* Variables */
 :root {
   /* Fonts */
   --font: 'Roboto', sans-serif;
   --titleFont: "Rock Salt", cursive;
+
   /*Colors */
   --black: #161517;
   --white: #f7f3ec;
 }
 
 body {}
+
+/* Header styles */
+header {
+  h1 {}
+  img {}
+  .logo {}
+}
+
+/* Main styles */
+main {
+  h1 {}
+}
+
+/* Fun facts about Lynn section */
+.funFact {
+  &__icon {
+    &.-pisces {
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      font-weight: 900;
+      font-size: 1.2em;
+      font-family: "arial unicode ms","Lucida Sans Unicode",sans-serif;
+    }
+  }
+  &__title {}
+  &__answer {}
+}
+
+/* Album section */
+.albums {}
+.albumWrapper {}
+.album {
+  &__art {}
+  &__title {}
+  &__date {}
+}
+.spotify {}
+
+/* Site footer section */
+nav {
+  &.__soMe {}
+  &.__extraLinks {}
+}
