@@ -172,9 +172,10 @@ main {
 
 main h1 {
   font-family: var(--titleFont);
+  color: var(--cPrimary);
 }
 
-section {
+.clearfix {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -270,6 +271,7 @@ section {
 .albums h1 {
   position: relative;
   width: min-content;
+  left: 2%;
 }
 
 .albums h1::after,
@@ -367,5 +369,9 @@ nav a:active {
   }
   .aboutLynn__funFacts {
     margin-top: 0;
+  }
+  .large {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
