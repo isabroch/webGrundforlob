@@ -10,17 +10,14 @@
 body,
 html {
   box-sizing: border-box;
-}
-
-/* no horizontal scrolling issues, smooth scrolling on in page links */
-body {
-  overflow-x: hidden;
+  /* no horizontal scrolling issues, smooth scrolling on in page links */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* making images inline-block and responsive to their container/wrapper */
 img {
   width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
 }

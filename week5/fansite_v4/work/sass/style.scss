@@ -13,8 +13,10 @@ html {
   --titleFont: "Rock Salt", cursive;
 
   /* Colors */
-  --cBlack: #000;
-  --cWhite: #fff;
+  --cBlack: #2f2a2a;
+  --cWhite: #f5f2da;
+  --cGray: #8b96a1;
+  --cPrimary: #bb5f6d;
 
   /* Sizes */
   --maxWidth: 960px;
@@ -25,36 +27,126 @@ html {
   max-width: var(--maxWidth);
   margin-left: auto;
   margin-right: auto;
-  display: block;
 }
 
-body {}
+body {
+  font-family: var(--font);
+}
 
 /* Header styles */
 header {
-  h1 {}
-  img {}
-  .logo {}
+  background: var(--cPrimary);
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  h1 {
+    @include center;
+    padding: 5px;
+    display: table;
+  }
+
+  a {
+    display: block;
+    text-shadow: 0 2px 1px;
+    transition: .2s;
+
+    &:focus,
+    &:hover {
+      transform: scale(1.05);
+      text-shadow: 0 3px 1px rgba(0,0,0,0.1);
+    }
+    &:active {
+      transform: scale(0.95);
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+  }
+}
+.logo {
+  width: auto;
+  height: 75px;
 }
 
 /* Main styles */
 main {
-  h1 {}
+  margin-top: 85px;
+  @include center;
+
+  h1 {
+    font-family: var(--titleFont);
+  }
+}
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* About section of PVRIS */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* - for 16:9 video*/
+  /*padding-bottom: 75%;*/
+  /* - for 4:3 video*/
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  iframe {
+    position: absolute;
+    border-width: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Gallery section of PVRIS */
+.large {
+  height: 310px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  padding: 5px 0;
+  img {
+    object-fit: cover;
+    width: 50%;
+    height: 100px;
+    float: left;
+    padding: 1%;
+  }
 }
 
 /* Stuff about Lynn Gunn */
 .aboutLynn {
-  position: relative;
-  &__background {
-    position: absolute;
-    width: 100%;
-    background: var(--cBlack);
+  &__img {
+    height: 450px;
+    object-fit: cover;
+    float: right;
+  }
+  &__funFacts {
+    float: right;
+    border-spacing: 5px 15px;
+    margin-top: -15px;
+  }
+  &__wrapper {
+    > p {
+      padding-bottom: 1.5em;
+    }
   }
 }
 
 /* Fun facts about Lynn section */
 .funFact {
+  td:first-child {
+    text-align: center;
+    border-right: 2px solid var(--cPrimary);
+  }
   &__icon {
+    font-size: 1.5em;
+    color: var(--cPrimary);
     &.-pisces {
       -webkit-font-smoothing: antialiased;
       display: inline-block;
@@ -63,42 +155,116 @@ main {
       text-rendering: auto;
       line-height: 1;
       font-weight: 900;
-      font-size: 1.2em;
+      font-size: 1.8em;
       font-family: "arial unicode ms","Lucida Sans Unicode",sans-serif;
     }
   }
-  &__title {}
-  &__answer {}
+  &__title {
+    font-size: .8em;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--cGray);
+  }
 }
 
 /* Album section */
-.albums {}
-.albumWrapper {}
+.albums {
+
+  h1 {
+    position: relative;
+    width: min-content;
+  }
+
+  h1::after,
+  h1::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 100vw;
+    border-top: 2px solid var(--cPrimary);
+    position: absolute;
+    top: 50%;
+  }
+
+  h1::after {
+    left: 130%;
+  }
+
+  h1::before {
+    right: 130%;
+  }
+
+}
+.albumWrapper {
+  @include center;
+}
 .album {
   float: left;
   width: calc(100% / 4);
-  padding: .2%;
+  padding: 1%;
 
-  &__art {}
-  &__title {}
-  &__date {}
+  &__art {
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+
+  &__title {
+    padding-top: 10px;
+  }
 }
 .spotify {}
 
 /* Site footer section */
+footer {
+  background: var(--cPrimary);
+}
 .navWrapper {
-  max-width: var(--maxWidth);
+  @include center;
 }
 nav {
-  &.__soMe {}
-  &.__extraLinks {}
+  padding: 15px;
+  font-size: 1.3em;
+  width: max-content;
 
-  li {
-    display: block;
+  &.__extraLinks {
+    float: right;
+  }
+
+  &.__soMe {
     float: left;
   }
 
+  li {
+    display: inline-block;
+  }
+
   a {
-    padding: .5em 1.1em;
+    display: inline-block;
+    padding: 1em 1.1em;
+    color: var(--cBlack);
+    text-decoration: none;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.15);
+      text-shadow: 0 3px 1px rgba(0,0,0,0.1);
+    }
+    &:active {
+      transform: scale(0.85);
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  [class*="col"] {
+    float: none;
+    width: 100%;
+  }
+
+  .aboutLynn__funFacts {
+    margin-top: 0;
   }
 }

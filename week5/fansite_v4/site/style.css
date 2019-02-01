@@ -9,19 +9,16 @@
 body,
 html {
   box-sizing: border-box;
-}
-
-/* no horizontal scrolling issues, smooth scrolling on in page links */
-body {
-  overflow-x: hidden;
+  /* no horizontal scrolling issues, smooth scrolling on in page links */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* making images inline-block and responsive to their container/wrapper */
 img {
   width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
 }
 
 /* Columns CSS */
@@ -32,30 +29,30 @@ img {
   clear: both;
 }
 
-[class^="col"] {
-  /* variables */
+/* variables */
+[class*="col"] {
   --totalCols: 12;
   --widthOf1: calc(100% / var(--totalCols));
   float: left;
-  padding-left: .5%;
-  padding-right: .5%;
+  padding-left: 2%;
+  padding-right: 2%;
   --numCols: var(--totalCols);
   width: calc(var(--widthOf1) * var(--numCols));
 }
 
-[class^="col"].-noPad {
+[class*="col"].-noPad {
   padding-left: 0;
   padding-right: 0;
 }
 
-[class^="col"].-leftPad {
-  padding-left: .5%;
+[class*="col"].-leftPad {
+  padding-left: 2%;
   padding-right: 0;
 }
 
-[class^="col"].-rightPad {
+[class*="col"].-rightPad {
   padding-left: 0;
-  padding-right: .5%;
+  padding-right: 2%;
 }
 
 .col1 {
@@ -114,26 +111,141 @@ html {
   --font: 'Roboto', sans-serif;
   --titleFont: "Rock Salt", cursive;
   /* Colors */
-  --cBlack: #000;
-  --cWhite: #fff;
+  --cBlack: #2f2a2a;
+  --cWhite: #f5f2da;
+  --cGray: #8b96a1;
+  --cPrimary: #bb5f6d;
   /* Sizes */
   --maxWidth: 960px;
 }
 
-/* Header styles */
-/* Main styles */
-/* Stuff about Lynn Gunn */
-.aboutLynn {
-  position: relative;
+body {
+  font-family: var(--font);
 }
 
-.aboutLynn__background {
+/* Header styles */
+header {
+  background: var(--cPrimary);
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+
+header h1 {
+  max-width: var(--maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  display: table;
+}
+
+header a {
+  display: block;
+  text-shadow: 0 2px 1px;
+  transition: .2s;
+}
+
+header a:focus, header a:hover {
+  transform: scale(1.05);
+  text-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+header a:active {
+  transform: scale(0.95);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: auto;
+  height: 75px;
+  -webkit-filter: drop-shadow(1px 1px 2  px rgba(0,0,0,0.4));
+}
+
+/* Main styles */
+main {
+  margin-top: 85px;
+  max-width: var(--maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main h1 {
+  font-family: var(--titleFont);
+}
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* About section of PVRIS */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* - for 16:9 video*/
+  /*padding-bottom: 75%;*/
+  /* - for 4:3 video*/
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.video iframe {
   position: absolute;
+  border-width: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: var(--cBlack);
+  height: 100%;
+}
+
+/* Gallery section of PVRIS */
+.large {
+  height: 310px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  padding: 5px 0;
+}
+
+.thumbnails img {
+  object-fit: cover;
+  width: 50%;
+  height: 100px;
+  float: left;
+  padding: 1%;
+}
+
+/* Stuff about Lynn Gunn */
+.aboutLynn__img {
+  height: 450px;
+  object-fit: cover;
+  float: right;
+}
+
+.aboutLynn__funFacts {
+  float: right;
+  border-spacing: 5px 15px;
+  margin-top: -15px;
+}
+
+.aboutLynn__wrapper > p {
+  padding-bottom: 1.5em;
 }
 
 /* Fun facts about Lynn section */
+.funFact td:first-child {
+  text-align: center;
+  border-right: 2px solid var(--cPrimary);
+}
+
+.funFact__icon {
+  font-size: 1.5em;
+  color: var(--cPrimary);
+}
+
 .funFact__icon.-pisces {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -142,27 +254,118 @@ html {
   text-rendering: auto;
   line-height: 1;
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 1.8em;
   font-family: "arial unicode ms","Lucida Sans Unicode",sans-serif;
 }
 
+.funFact__title {
+  font-size: .8em;
+  font-weight: bold;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cGray);
+}
+
 /* Album section */
+.albums h1 {
+  position: relative;
+  width: min-content;
+}
+
+.albums h1::after,
+.albums h1::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 100vw;
+  border-top: 2px solid var(--cPrimary);
+  position: absolute;
+  top: 50%;
+}
+
+.albums h1::after {
+  left: 130%;
+}
+
+.albums h1::before {
+  right: 130%;
+}
+
+.albumWrapper {
+  max-width: var(--maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .album {
   float: left;
   width: calc(100% / 4);
-  padding: .2%;
+  padding: 1%;
+}
+
+.album__art {
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.album__title {
+  padding-top: 10px;
 }
 
 /* Site footer section */
-.navWrapper {
-  max-width: var(--maxWidth);
+footer {
+  background: var(--cPrimary);
 }
 
-nav li {
-  display: block;
+.navWrapper {
+  max-width: var(--maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  padding: 15px;
+  font-size: 1.3em;
+  width: max-content;
+}
+
+nav.__extraLinks {
+  float: right;
+}
+
+nav.__soMe {
   float: left;
 }
 
+nav li {
+  display: inline-block;
+}
+
 nav a {
-  padding: .5em 1.1em;
+  display: inline-block;
+  padding: 1em 1.1em;
+  color: var(--cBlack);
+  text-decoration: none;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+  transition: .2s;
+}
+
+nav a:hover {
+  transform: scale(1.15);
+  text-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+nav a:active {
+  transform: scale(0.85);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 700px) {
+  [class*="col"] {
+    float: none;
+    width: 100%;
+  }
+  .aboutLynn__funFacts {
+    margin-top: 0;
+  }
 }

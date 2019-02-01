@@ -6,13 +6,13 @@
   clear: both;
 }
 
-[class^="col"] {
+[class*="col"] {
   /* variables */
   --totalCols: 12;
   --widthOf1: calc(100% / var(--totalCols));
   float: left;
-  padding-left: .5%;
-  padding-right: .5%;
+  padding-left: 2%;
+  padding-right: 2%;
 
   --numCols: var(--totalCols);
   width: calc(var(--widthOf1) * var(--numCols));
@@ -23,13 +23,13 @@
   }
 
   &.-leftPad {
-    padding-left: .5%;
+    padding-left: 2%;
     padding-right: 0;
   }
 
   &.-rightPad {
     padding-left: 0;
-    padding-right: .5%;
+    padding-right: 2%;
   }
 }
 
