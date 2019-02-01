@@ -9,10 +9,13 @@
 [class^="col"] {
   /* variables */
   --totalCols: 12;
-  --widthOf1: calc(100% / var(--numCols));
+  --widthOf1: calc(100% / var(--totalCols));
   float: left;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
+  padding-left: .5%;
+  padding-right: .5%;
+
+  --numCols: var(--totalCols);
+  width: calc(var(--widthOf1) * var(--numCols));
 
   &.-noPad {
     padding-left: 0;
@@ -20,66 +23,33 @@
   }
 
   &.-leftPad {
-    padding-left: 0.5%;
+    padding-left: .5%;
     padding-right: 0;
   }
 
   &.-rightPad {
     padding-left: 0;
-    padding-right: 0.5%;
+    padding-right: .5%;
   }
 }
 
 // SASS function for calculating width
-@function grid-width($cols) {
-  @return calc(var(--widthOf1) * #{$cols});
+@mixin colMod($nCol) {
+  $i: 1;
+  @while $i <= $nCol {
+    @if $i == $nCol {
+      .col#{$i} {
+        --numCols: #{$i};
+        float: none;
+      }
+    } @else {
+      .col#{$i} {
+        --numCols: #{$i};
+      }
+    }
+
+    $i: $i+1;
+  }
 }
 
-.col1 {
-  width: grid-width(1);
-}
-
-.col2 {
-  width: grid-width(2);
-}
-
-.col3 {
-  width: grid-width(3);
-}
-
-.col4 {
-  width: grid-width(4);
-}
-
-.col5 {
-  width: grid-width(5);
-}
-
-.col6 {
-  width: grid-width(6);
-}
-
-.col7 {
-  width: grid-width(7);
-}
-
-.col8 {
-  width: grid-width(8);
-}
-
-.col9 {
-  width: grid-width(9);
-}
-
-.col10 {
-  width: grid-width(10);
-}
-
-.col11 {
-  width: grid-width(11);
-}
-
-.col12 {
-  float: none;
-  width: grid-width(12);
-}
+@include colMod(12)

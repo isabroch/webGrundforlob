@@ -7,14 +7,25 @@
 /* Main CSS */
 
 /* Variables */
-:root {
+html {
   /* Fonts */
   --font: 'Roboto', sans-serif;
   --titleFont: "Rock Salt", cursive;
 
-  /*Colors */
-  --black: #161517;
-  --white: #f7f3ec;
+  /* Colors */
+  --cBlack: #000;
+  --cWhite: #fff;
+
+  /* Sizes */
+  --maxWidth: 960px;
+}
+
+// Center styling
+@mixin center {
+  max-width: var(--maxWidth);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 body {}
@@ -29,6 +40,16 @@ header {
 /* Main styles */
 main {
   h1 {}
+}
+
+/* Stuff about Lynn Gunn */
+.aboutLynn {
+  position: relative;
+  &__background {
+    position: absolute;
+    width: 100%;
+    background: var(--cBlack);
+  }
 }
 
 /* Fun facts about Lynn section */
@@ -54,6 +75,10 @@ main {
 .albums {}
 .albumWrapper {}
 .album {
+  float: left;
+  width: calc(100% / 4);
+  padding: .2%;
+
   &__art {}
   &__title {}
   &__date {}
@@ -61,7 +86,19 @@ main {
 .spotify {}
 
 /* Site footer section */
+.navWrapper {
+  max-width: var(--maxWidth);
+}
 nav {
   &.__soMe {}
   &.__extraLinks {}
+
+  li {
+    display: block;
+    float: left;
+  }
+
+  a {
+    padding: .5em 1.1em;
+  }
 }

@@ -35,10 +35,12 @@ img {
 [class^="col"] {
   /* variables */
   --totalCols: 12;
-  --widthOf1: calc(100% / var(--numCols));
+  --widthOf1: calc(100% / var(--totalCols));
   float: left;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  --numCols: var(--totalCols);
+  width: calc(var(--widthOf1) * var(--numCols));
 }
 
 [class^="col"].-noPad {
@@ -47,77 +49,90 @@ img {
 }
 
 [class^="col"].-leftPad {
-  padding-left: 0.5%;
+  padding-left: .5%;
   padding-right: 0;
 }
 
 [class^="col"].-rightPad {
   padding-left: 0;
-  padding-right: 0.5%;
+  padding-right: .5%;
 }
 
 .col1 {
-  width: calc(var(--widthOf1) * 1);
+  --numCols: 1;
 }
 
 .col2 {
-  width: calc(var(--widthOf1) * 2);
+  --numCols: 2;
 }
 
 .col3 {
-  width: calc(var(--widthOf1) * 3);
+  --numCols: 3;
 }
 
 .col4 {
-  width: calc(var(--widthOf1) * 4);
+  --numCols: 4;
 }
 
 .col5 {
-  width: calc(var(--widthOf1) * 5);
+  --numCols: 5;
 }
 
 .col6 {
-  width: calc(var(--widthOf1) * 6);
+  --numCols: 6;
 }
 
 .col7 {
-  width: calc(var(--widthOf1) * 7);
+  --numCols: 7;
 }
 
 .col8 {
-  width: calc(var(--widthOf1) * 8);
+  --numCols: 8;
 }
 
 .col9 {
-  width: calc(var(--widthOf1) * 9);
+  --numCols: 9;
 }
 
 .col10 {
-  width: calc(var(--widthOf1) * 10);
+  --numCols: 10;
 }
 
 .col11 {
-  width: calc(var(--widthOf1) * 11);
+  --numCols: 11;
 }
 
 .col12 {
+  --numCols: 12;
   float: none;
-  width: calc(var(--widthOf1) * 12);
 }
 
 /* Main CSS */
 /* Variables */
-:root {
+html {
   /* Fonts */
   --font: 'Roboto', sans-serif;
   --titleFont: "Rock Salt", cursive;
-  /*Colors */
-  --black: #161517;
-  --white: #f7f3ec;
+  /* Colors */
+  --cBlack: #000;
+  --cWhite: #fff;
+  /* Sizes */
+  --maxWidth: 960px;
 }
 
 /* Header styles */
 /* Main styles */
+/* Stuff about Lynn Gunn */
+.aboutLynn {
+  position: relative;
+}
+
+.aboutLynn__background {
+  position: absolute;
+  width: 100%;
+  background: var(--cBlack);
+}
+
 /* Fun facts about Lynn section */
 .funFact__icon.-pisces {
   -webkit-font-smoothing: antialiased;
@@ -132,4 +147,22 @@ img {
 }
 
 /* Album section */
+.album {
+  float: left;
+  width: calc(100% / 4);
+  padding: .2%;
+}
+
 /* Site footer section */
+.navWrapper {
+  max-width: var(--maxWidth);
+}
+
+nav li {
+  display: block;
+  float: left;
+}
+
+nav a {
+  padding: .5em 1.1em;
+}
