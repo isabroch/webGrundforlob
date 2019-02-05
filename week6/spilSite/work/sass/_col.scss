@@ -1,0 +1,85 @@
+/* Columns CSS */
+/* when using floats, adds clear element */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+[class^="col"] {
+  /* variables */
+  --totalCols: 12;
+  --widthOf1: calc(100% / var(--numCols));
+  float: left;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+
+  &.-noPad {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.-leftPad {
+    padding-left: 0.5%;
+    padding-right: 0;
+  }
+
+  &.-rightPad {
+    padding-left: 0;
+    padding-right: 0.5%;
+  }
+}
+
+// SASS function for calculating width
+@function grid-width($cols) {
+  @return calc(var(--widthOf1) * #{$cols});
+}
+
+.col1 {
+  width: grid-width(1);
+}
+
+.col2 {
+  width: grid-width(2);
+}
+
+.col3 {
+  width: grid-width(3);
+}
+
+.col4 {
+  width: grid-width(4);
+}
+
+.col5 {
+  width: grid-width(5);
+}
+
+.col6 {
+  width: grid-width(6);
+}
+
+.col7 {
+  width: grid-width(7);
+}
+
+.col8 {
+  width: grid-width(8);
+}
+
+.col9 {
+  width: grid-width(9);
+}
+
+.col10 {
+  width: grid-width(10);
+}
+
+.col11 {
+  width: grid-width(11);
+}
+
+.col12 {
+  float: none;
+  width: grid-width(12);
+}
