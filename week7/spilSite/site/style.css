@@ -1,0 +1,115 @@
+/* Standard styling i.e. resetting styles and image styles */
+/* resetting styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+html {
+  box-sizing: border-box;
+}
+
+/* no horizontal scrolling issues, smooth scrolling on in page links */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* making images inline-block and responsive to their container/wrapper */
+img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Columns CSS */
+/* when using floats, adds clear element */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+[class^="col"] {
+  /* variables */
+  --totalCols: 12;
+  --widthOf1: calc(100% / var(--numCols));
+  float: left;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+[class^="col"].-noPad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[class^="col"].-leftPad {
+  padding-left: 0.5%;
+  padding-right: 0;
+}
+
+[class^="col"].-rightPad {
+  padding-left: 0;
+  padding-right: 0.5%;
+}
+
+.col1 {
+  width: calc(var(--widthOf1) * 1);
+}
+
+.col2 {
+  width: calc(var(--widthOf1) * 2);
+}
+
+.col3 {
+  width: calc(var(--widthOf1) * 3);
+}
+
+.col4 {
+  width: calc(var(--widthOf1) * 4);
+}
+
+.col5 {
+  width: calc(var(--widthOf1) * 5);
+}
+
+.col6 {
+  width: calc(var(--widthOf1) * 6);
+}
+
+.col7 {
+  width: calc(var(--widthOf1) * 7);
+}
+
+.col8 {
+  width: calc(var(--widthOf1) * 8);
+}
+
+.col9 {
+  width: calc(var(--widthOf1) * 9);
+}
+
+.col10 {
+  width: calc(var(--widthOf1) * 10);
+}
+
+.col11 {
+  width: calc(var(--widthOf1) * 11);
+}
+
+.col12 {
+  float: none;
+  width: calc(var(--widthOf1) * 12);
+}
+
+/* Variables */
+:root {
+  /* Fonts */
+  --font: 'Roboto', sans-serif;
+  /*Colors */
+  --black: #161517;
+  --white: #f7f3ec;
+}
