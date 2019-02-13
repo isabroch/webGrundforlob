@@ -1,0 +1,56 @@
+// Standard styling of things
+@import 'standard';
+
+/* Variables */
+:root {
+  /* Fonts */
+  --f-sans: 'Roboto', sans-serif;
+
+  /* Colors in RGB format. */
+  // Must use uppercase RGB() and RGBA() for parsing
+  --c-black: 5, 10, 5;
+  --c-white: 252, 253, 245;
+  --c-yellow:255, 240, 144;
+}
+
+@function color($color-name) {
+  @return var(--c-#{$color-name});
+};
+
+/* classes for media queries:
+.--m = mobile (450px and smaller)
+.--d = desktop (451px and larger) */
+
+  // Hiding menu for now because I'm not sure what to do about that just yet.
+  header .menu, --d {
+    display: none;
+  }
+
+header {
+  position: sticky;
+  z-index: 10;
+  display: flex;
+  top: 0;
+  height: 60px;
+  background: RGB(color('black'));
+
+  > * {
+    padding: 5px;
+  }
+
+  .logo {
+    flex: 8 150px;
+    display: block;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  button {
+    flex: 2 44px;
+    font-size: 2em;
+    color: white;
+  }
+}

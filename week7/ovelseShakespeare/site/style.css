@@ -8,16 +8,16 @@ p{
     padding-bottom:1em;
 }
 #wrapper{
-	max-width:920px; 
+	max-width:920px;
 	margin:0 auto;
-    font-family:Verdana, Geneva, sans-serif; 
-	font-size:0.9em; 
-    color:#600; 
+    font-family:Verdana, Geneva, sans-serif;
+	font-size:0.9em;
+    color:#600;
 }
 h1{
     font-family: 'Metamorphous', cursive;
-	font-weight:normal; 
-	font-size:3.5em; 
+	font-weight:normal;
+	font-size:3.5em;
 	text-align:center;
     margin: 0.5em 0;
 }
@@ -36,24 +36,35 @@ header, article>div{
 }
 article{
     line-height:1.5;
+    flex: 1 0 100%;
+    display: flex;
 }
 article>div{
     background-color:#f7c68c;
+    box-sizing: border-box;
     padding:1%;
     border-radius: 5px;
+    flex: 1;
 }
 em{
     font-weight:bold;
     font-style:normal;
 }
 footer{
-	text-align:center; 
-	height:6em; 
+  flex: 0 0 100%;
+	text-align:center;
+	height:6em;
 	padding-top:1em;
     border-top:solid 1px #600;
     margin-top:1em;
 }
 a{
-	color:#600; 
+	color:#600;
 	line-height:4em;
+}
+
+@media only screen and (max-width: 450px) {
+  article{
+    flex-direction: column;
+  }
 }
