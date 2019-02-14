@@ -132,6 +132,11 @@ a {
 	color: RGBA(var(--c-yellow));
 	text-decoration: none;
 	font-weight: 500;
+	transition: filter 0.4s ease;
+}
+
+a:hover {
+	filter: brightness(1.5);
 }
 
 h1 {
@@ -140,6 +145,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 0.7em;
 	position: relative;
 }
 
@@ -371,6 +377,7 @@ footer {
 	font-size: 1.4em;
 	height: 100px;
 	padding-top: 0.8em;
+	padding-right: 10px;
 }
 
 .footerWrapper ul {
@@ -505,7 +512,7 @@ strong {
 	border: 2px outset RGB(var(--c-black));
 	border-radius: 10px;
 	background: none;
-	padding: 8px;
+	padding: 8px 8px 6px 8px;
 	text-transform: uppercase;
 	display: flex;
 	align-items: center;
