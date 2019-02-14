@@ -21,6 +21,19 @@
   <!-- Have combined everything into a single CSS file per page -->
   <link rel="stylesheet" href="home.css">
 
+  <!-- Script -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+      console.log('Loaded');
+    });
+
+    function openMenu() {
+      var menuElement = document.querySelector('.menu');
+      var menu = menuElement.classList;
+
+      menu.toggle('hidden');
+    }
+  </script>
 </head>
 
 <body>
@@ -29,7 +42,7 @@
     <div class="headerWrapper">
       <a href="index.html" title="Home" class="logo"><img src="../work/_images/logoThing.png" alt="Mystic Messenger logo"></a>
       <button class="search"><i class="fas fa-search"></i></button>
-      <button class="menuToggle --m"><i class="fas fa-bars"></i></button>
+      <button class="menuToggle --m" onclick="openMenu()"><i class="fas fa-bars"></i></button>
       <nav class="menu hidden">
         <ul>
           <li class="--m"><a href="index.html">Home</a></li>
@@ -118,11 +131,21 @@
       <section class="chara">
         <h2>Characters</h2>
         <div class="flexContain">
-          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with blonde hair and purple eyes."><h3>Yoosung</h3></a></section>
-          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with long, silver hair and red eyes."><h3>Zen</h3></a></section>
-          <section><a href=""><img src="https://via.placeholder.com/300" alt="Woman with short brown hair, brown eyes, and glasses."><h3>Jaehee</h3></a></section>
-          <section><a href=""><img src="https://via.placeholder.com/300" alt="Serious looking businessman with black hair and gray eyes."><h3>Jumin</h3></a></section>
-          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with red hair and golden eyes."><h3>707</h3></a></section>
+          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with blonde hair and purple eyes.">
+              <h3>Yoosung</h3>
+            </a></section>
+          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with long, silver hair and red eyes.">
+              <h3>Zen</h3>
+            </a></section>
+          <section><a href=""><img src="https://via.placeholder.com/300" alt="Woman with short brown hair, brown eyes, and glasses.">
+              <h3>Jaehee</h3>
+            </a></section>
+          <section><a href=""><img src="https://via.placeholder.com/300" alt="Serious looking businessman with black hair and gray eyes.">
+              <h3>Jumin</h3>
+            </a></section>
+          <section><a href=""><img src="https://via.placeholder.com/300" alt="Man with red hair and golden eyes.">
+              <h3>707</h3>
+            </a></section>
           <section class="findMore"><a href="">Find more characters here!</a></section>
         </div>
       </section>
@@ -168,21 +191,15 @@
 
 
   <footer>
-    <div class="footerWrapper">
-      <nav>
-        <ul>
-          <li><a href="">Official Website</a></li>
-        </ul>
-      </nav>
-      <nav>
-        <ul>
-          <li><a href=""><i class="fab fa-youtube"></i></a></li>
-          <li><a href=""><i class="fab fa-twitter"></i></a></li>
-          <li><a href=""><i class="fab fa-tumblr-square"></i></a></li>
-          <li><a href=""><i class="fab fa-facebook"></i></a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="footerWrapper">
+      <ul>
+        <li><a href="">Official Website</a></li>
+        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        <li><a href=""><i class="fab fa-tumblr-square"></i></a></li>
+        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+      </ul>
+    </nav>
   </footer>
 
 </body>

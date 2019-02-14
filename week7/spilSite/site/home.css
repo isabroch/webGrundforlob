@@ -99,7 +99,7 @@ img {
 	/* Fonts */
 	--f-sans: 'Roboto', sans-serif;
 	/* Colors in RGB format. */
-	--c-black: 5, 10, 5;
+	--c-black: 2,2,2;
 	--c-white: 252, 252, 250;
 	--c-yellow: 255, 240, 144;
 	/* Site Widths */
@@ -200,7 +200,9 @@ header {
 	box-shadow: 0 2px 5px RGBA(var(--c-black), 0.2);
 	border-radius: 10px;
 	top: 60px;
-	width: calc(100% - 16px);
+	right: 0;
+	width: 100%;
+	max-width: 483px;
 	background: RGB(var(--c-white));
 	margin: 8px;
 }
@@ -208,7 +210,7 @@ header {
 .menu::after {
 	content: "";
 	position: absolute;
-	top: 0;
+	top: 2px;
 	right: 16px;
 	width: 0;
 	height: 0;
@@ -263,7 +265,7 @@ main {
 
 .mainContent section:first-child h2 {
 	margin: 10px 0;
-	padding-left: 0 0 0 10px;
+	padding-left: 10px;
 }
 
 .mainContent h2 {
@@ -328,7 +330,7 @@ main {
 	flex: 1 50%;
 	padding: 7px;
 	position: relative;
-	transition: filter 0.5s ease;
+	transition: filter .5s ease;
 }
 
 .chara .flexContain section:hover {
@@ -372,6 +374,24 @@ main {
 	background: RGBA(var(--c-yellow), 0.2);
 }
 
+.download {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin: 2em 5%;
+}
+
+.download a {
+	flex: 1;
+	padding: 20px 10px;
+	border: 2px inset RGB(var(--c-yellow));
+	background: RGBA(var(--c-black), 0.6);
+	border-radius: 10px;
+	margin: 5px 10px;
+	font-size: 1.2em;
+	text-align: center;
+}
+
 /* main end */
 /* --- */
 /* footer start */
@@ -383,6 +403,22 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: var(--maxMobile);
+	font-size: 1.4em;
+	height: 100px;
+	padding-top: .8em;
+}
+
+.footerWrapper ul {
+	display: flex;
+}
+
+.footerWrapper li:first-child {
+	margin-right: auto;
+}
+
+.footerWrapper li a {
+	padding: 5px;
+	margin: 5px;
 }
 
 /* footer end */
@@ -397,6 +433,9 @@ footer {
 		margin-right: auto;
 		max-width: var(--maxDesktop);
 	}
+	main {
+		padding: 20px;
+	}
 	.chara .flexContain {
 		display: flex;
 		flex-wrap: wrap;
@@ -410,5 +449,8 @@ footer {
 	}
 	.chara .flexContain .findMore a {
 		width: 100%;
+	}
+	.download {
+		flex-direction: row;
 	}
 }

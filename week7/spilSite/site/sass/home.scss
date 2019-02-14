@@ -8,7 +8,7 @@
 
   /* Colors in RGB format. */
   // Must use uppercase RGB() and RGBA() for parsing
-  --c-black: 5, 10, 5;
+  --c-black: 2,2,2;
   --c-white: 252, 252, 250;
   --c-yellow: 255, 240, 144;
 
@@ -122,14 +122,17 @@ header {
   box-shadow: 0 2px 5px RGBA(color('black'),0.2);
   border-radius: 10px;
   top: 60px;
-  width: calc(100% - 16px);
+  right: 0;
+  width: 100%;
+  max-width: 483px;
   background: RGB(color('white'));
   margin: 8px;
 
+// speech bubble stuff
   &::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 2px;
     right: 16px;
     width: 0;
     height: 0;
@@ -185,7 +188,7 @@ main {
 
   section:first-child h2 {
     margin: 10px 0;
-    padding-left: 0 0 0 10px;
+    padding-left: 10px;
   }
 
   h2 {
@@ -251,7 +254,7 @@ main {
       flex: 1 50%;
       padding: 7px;
       position: relative;
-      transition: filter 0.5s ease;
+      transition: filter .5s ease;
       &:hover {
         filter: brightness(1.5);
       }
@@ -294,6 +297,23 @@ main {
     }
   }
 }
+
+.download {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2em 5%;
+  a {
+    flex: 1;
+    padding: 20px 10px;
+    border: 2px inset RGB(color('yellow'));
+    background: RGBA(color('black'),0.6);
+    border-radius: 10px;
+    margin: 5px 10px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
 /* main end */
 
 /* --- */
@@ -305,6 +325,24 @@ footer {
 
 .footerWrapper {
   @include center(maxMobile);
+  font-size: 1.4em;
+  height: 100px;
+  padding-top: .8em;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    &:first-child {
+      margin-right: auto;
+    }
+
+    a {
+      padding: 5px;
+      margin: 5px;
+    }
+  }
 }
 /* footer end */
 
@@ -317,6 +355,10 @@ footer {
   .headerWrapper,
   main {
     @include center(maxDesktop);
+  }
+
+  main {
+    padding: 20px;
   }
 
   .chara {
@@ -332,9 +374,13 @@ footer {
         height: 300px;
       }
 
-        .findMore a {
+      .findMore a {
         width: 100%;
       }
     }
+  }
+
+  .download {
+    flex-direction: row;
   }
 }
