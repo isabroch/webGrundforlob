@@ -56,13 +56,10 @@ table {
 
 body,
 html {
-  box-sizing: border-box;
-}
-
-/* no horizontal scrolling issues, smooth scrolling on in page links */
-body {
-  overflow-x: hidden;
+	overflow-x: hidden;
   scroll-behavior: smooth;
+	width: 100vw;
+  box-sizing: border-box;
 }
 
 /* making images inline-block and responsive to their container/wrapper */
