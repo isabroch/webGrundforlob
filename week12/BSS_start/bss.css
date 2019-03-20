@@ -202,3 +202,11 @@ footer a{
 .hidden {
 	display: none;
 }
+
+.thumbs img.active {
+	border-color: #c04e4e;
+}
+
+.thumbs img {
+	cursor: pointer;
+}
