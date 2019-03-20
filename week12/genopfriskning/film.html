@@ -20,7 +20,14 @@
     }
     nav img {
         cursor: pointer;
+        opacity: 0.5;
+        transition: 0.3s;
     }
+
+    nav img:hover {
+        opacity: 0.8;
+    }
+
     img{
         height:100%;
         width:auto;
@@ -31,8 +38,11 @@
 	h2{
         font-weight:normal;
 		padding:0.5em;
-       
 	}
+
+    .active, .active:hover {
+        opacity: 1;
+    }
 </style>
 </head>
 
