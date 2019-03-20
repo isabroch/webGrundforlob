@@ -81,17 +81,24 @@ nav ul li{  /* dvs. alle */
 }
 nav>ul>li>ul{  /* UNDERMENUERNE */
 	margin-top:0.5em; /* for tilsvarende luft mellem hovedmenupunkterne og undermenu */
-	position:absolute;
+	/* position:absolute; */
 	width:100%;
 	border-left:solid 1px #FFF;
 	border-right:solid 1px #FFF;
 	border-bottom:solid 1px #FFF;
-	display:none;
+	z-index: 1;
+	/* display:none; */
 }
+
+.jsActive {
+	position: absolute;
+}
+
 nav>ul>li>ul>li{
 	text-align:center;
 	background-color:#c4bbac;
 	border-top:solid 1px #FFF;
+	cursor: pointer;
 }
 nav a{
 	font-size:1.2em; 
@@ -123,8 +130,9 @@ footer a{
 
 /*--------*/
 #ekstra{
-	display:none;	
+	/* display:none;	 */
 }
+
 #readmore, .photosection i{
 	cursor:pointer;
 }
@@ -187,4 +195,10 @@ footer a{
 		font-size:1.5em; 
 		padding:0.5em;
 	}
+}
+
+/* Own code */
+
+.hidden {
+	display: none;
 }
