@@ -59,9 +59,17 @@ table {
 	box-sizing: inherit;
 }
 
+<<<<<<< HEAD
 html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+=======
+body,
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	width: 100vw;
+>>>>>>> cc7698fc88111ebad50696585ca0b6d7ce154501
 	box-sizing: border-box;
 }
 
@@ -130,7 +138,11 @@ a {
 	color: RGBA(var(--c-yellow));
 	text-decoration: none;
 	font-weight: 500;
+<<<<<<< HEAD
 	transition: 0.4s ease;
+=======
+	transition: filter 0.4s ease;
+>>>>>>> cc7698fc88111ebad50696585ca0b6d7ce154501
 }
 
 a:hover {
@@ -164,10 +176,13 @@ h1::after {
 	margin-left: 0.5em;
 }
 
+<<<<<<< HEAD
 p {
 	font-size: 1.1em;
 }
 
+=======
+>>>>>>> cc7698fc88111ebad50696585ca0b6d7ce154501
 /* --- */
 /* header start */
 header {
@@ -470,7 +485,11 @@ table {
 	margin: 10px;
 	border-spacing: 5px;
 	border-collapse: separate;
+<<<<<<< HEAD
 	font-size: 1.05em;
+=======
+	font-size: 0.9em;
+>>>>>>> cc7698fc88111ebad50696585ca0b6d7ce154501
 }
 
 @media screen and (max-width: 474px) {
