@@ -1,7 +1,8 @@
 // Vi laver en interaktiv galleri
 const celebrityThumbnails = document.querySelectorAll('nav img');
 const celebrityThumbnailsArray = Array.from(celebrityThumbnails);
-const activeImage = document.querySelector('#plakat');
+
+const displayImage = document.querySelector('#plakat');
 
 const posterList=["anne_les_mis", "brad_bastards", "colin_single_man", "drew_miss_you", "eddie_bev_hills_cop"];
 
@@ -19,7 +20,11 @@ celebrityThumbnails.forEach(thumbnail => {
 
 // Udskift stor billede med denne skuespillers plakat, plakater er skrevet i samme rækkefølge som thumbnails
 function changeImage(clickedThumb) {
-    console.log(clickedThumb);
+    // Find ud hvor den klikkede skuespiller står i rækkefølgen
+    let index = celebrityThumbnailsArray.indexOf(clickedThumb);
+
+    // Sætte stor billedes source til skuespillers plakat
+    displayImage.setAttribute('src', `posters/${posterList[index]}.jpg`)
 }
 
 // Udskift 'Film Quiz' tekst med skuespillers navn, som står i thumbnails 'alt'
