@@ -1,0 +1,345 @@
+@charset "UTF-8";
+/* fælles code */
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans|Playfair+Display");
+/* box-sizing: make all elements their exact width, including padding and margin and border
+   padding, margin, and border are set to 0 to nullify browser formatting */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+/* formatting text types
+h1 = rubrik
+h2 = underrubrik
+h3 = mellemrubrik
+p = brødtekst */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 55px; }
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500; }
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 10px; }
+
+p {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5em; }
+
+/* formatting links
+regular link is colored
+on hover, slightly lighter in color */
+a {
+  color: #791515;
+  font-weight: bolder; }
+
+a:hover {
+  color: #962323; }
+
+/* blockquote for quote text only.
+credit to speaker is outside of blockquote.
+automatically appends "" to text. */
+blockquote {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  padding: 30px 20px;
+  text-align: center; }
+
+blockquote:before {
+  content: '„';
+  font-size: 24px;
+  color: #791515; }
+
+blockquote:after {
+  content: '“';
+  font-size: 24px;
+  color: #791515; }
+
+address {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-transform: uppercase; }
+
+.dato, .forfatter {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase; }
+
+/* extra main code -- isabella broch styling*/
+span {
+  color: #791515; }
+
+/* aniamtion code for hovers */
+@keyframes readmore {
+  100% {
+    right: 20px;
+    opacity: 1; } }
+
+/* code til forside */
+#isabellaBroch {
+  max-width: 1000px;
+  min-width: 450px;
+  margin: 0 auto; }
+
+#forside {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  justify-content: space-around;
+  margin: 20px 0px; }
+  @media screen and (min-width: 550px) {
+    #forside {
+      grid-template-columns: 1fr 300px; } }
+  #forside #columnMain {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-gap: 20px;
+    align-content: start; }
+    #forside #columnMain section {
+      position: relative;
+      height: 500px;
+      background: white 0 0/cover no-repeat;
+      transition: 0.2s; }
+      #forside #columnMain section h3::after {
+        content: 'Læs mere →';
+        position: absolute;
+        right: 50px;
+        opacity: 0;
+        display: inline-block;
+        font-weight: 800;
+        bottom: 15px; }
+      #forside #columnMain section:hover h3::after {
+        animation: readmore 0.4s forwards; }
+      #forside #columnMain section h2 {
+        font-size: 30px;
+        font-weight: 800; }
+      #forside #columnMain section h3 {
+        font-weight: 500; }
+      #forside #columnMain section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(rgba(121, 21, 21, 0) 25%, rgba(121, 21, 21, 0.9) 90%, #791515); }
+      #forside #columnMain section .text {
+        position: absolute;
+        bottom: 0;
+        padding: 30px;
+        color: white; }
+      #forside #columnMain section#article1 {
+        background-image: url("./files/autoKeyBW.jpg"); }
+        #forside #columnMain section#article1:hover {
+          background-image: url("./files/autoKey.jpg"); }
+      #forside #columnMain section#article2 {
+        background-image: url("./files/trashBW.jpg"); }
+        #forside #columnMain section#article2:hover {
+          background-image: url("./files/trash.jpg"); }
+    #forside #columnMain img {
+      width: 100%;
+      position: absolute; }
+  #forside #columnSide {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+    overflow-y: hidden; }
+  #forside article {
+    padding: 10px 10px;
+    transition: 0.2s; }
+    #forside article:hover {
+      background: rgba(121, 21, 21, 0.3); }
+    #forside article h3 {
+      margin: 0; }
+
+#columnSide h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #791515;
+  padding-top: 2px;
+  text-transform: uppercase;
+  position: relative;
+  font-family: "Merriweather Sans", sans-serif; }
+
+#latestNews h2::before {
+  content: '';
+  display: block;
+  height: 3px;
+  top: 13px;
+  right: 0;
+  width: 53%;
+  background: #791515;
+  position: absolute; }
+
+#columnSide a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: rgba(0, 0, 0, 0.2) 1px solid; }
+  #columnSide a:last-child {
+    border-bottom: none; }
+
+address.author {
+  color: rgba(0, 0, 0, 0.5);
+  font: 600 12px/1.8em "Merriweather Sans", sans-serif; }
+
+/* code til underside */
+.article {
+  margin: 50px 80px; }
+  .article h1 {
+    line-height: 1.25em; }
+  .article h2 {
+    font-size: 35px;
+    line-height: 1.4em; }
+  .article h3 {
+    font-size: 20px;
+    margin-bottom: -5px;
+    margin-top: 15px; }
+  .article p {
+    line-height: 1.6em;
+    padding-top: 10px; }
+  .article .somebodyTalked {
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+    font-style: italic; }
+
+.forfatter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
+
+.autoKey {
+  width: 400px;
+  margin: 20px 0 20px 20px;
+  float: right; }
+
+.trash {
+  width: 100%; }
+
+figure {
+  float: right;
+  width: 400px;
+  padding: 15px 15px 5px 15px;
+  margin: 0 -15px 0 0;
+  position: relative;
+  font: 16px "Merriweather Sans", sans-serif;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5); }
+  figure figcaption {
+    padding: 0 10px 0 0;
+    text-align: center; }
+
+/* code til header */
+header {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  /* navigation = menu */ }
+  header a#logo {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 465px;
+    position: relative;
+    z-index: 10; }
+  header #logo {
+    padding-left: 20px; }
+    header #logo img {
+      height: 85px;
+      float: left; }
+    header #logo h1 {
+      margin-left: 70px; }
+    header #logo .logoTop {
+      font-size: 50px;
+      line-height: 36px;
+      padding-top: 4px; }
+    header #logo .logoBot {
+      font-size: 34.5px; }
+  header nav {
+    padding: 0 0 9px;
+    border-bottom: 2px solid #962323;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    font-family: "Merriweather Sans"; }
+    @media screen and (min-width: 800px) {
+      header nav {
+        margin: -25px 0 0; } }
+    header nav ul {
+      list-style: none; }
+    header nav li {
+      display: inline-block;
+      margin: 0 0 0 -6px; }
+    header nav li:last-child {
+      margin: 0 20px 0 -6px; }
+    header nav a {
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: 0.2s; }
+      header nav a.active, header nav a:hover {
+        font-weight: 900;
+        background: rgba(150, 35, 35, 0.75);
+        color: white; }
+      header nav a.active {
+        background: #962323; }
+
+/*code til footer*/
+footer {
+  background: #791515;
+  width: 100%;
+  color: white;
+  padding: 20px; }
+  footer address {
+    text-transform: none; }
+  footer p {
+    padding: 5px 0;
+    font-size: 12px; }
+    footer p strong {
+      text-transform: uppercase;
+      font-size: 14px; }
+  footer form {
+    float: right;
+    text-align: center; }
+    footer form input {
+      font-size: 11px;
+      padding: 5px;
+      color: #791515;
+      text-align: center; }
+      footer form input[type="text"] {
+        margin: 0 -5px 8px 0;
+        width: 200px; }
+      footer form input[type="submit"] {
+        font: 800 15px "Merriweather Sans", sans-serif;
+        text-transform: uppercase;
+        background: white;
+        width: 200px;
+        cursor: pointer;
+        transition: 0.1s;
+        border-radius: 5px;
+        box-shadow: 0 4px #962323; }
+        footer form input[type="submit"]:hover {
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: 0 0 #962323;
+          transform: translate(0px, 4px); }
+        footer form input[type="submit"]:active {
+          background: #962323;
+          color: white;
+          box-shadow: 0 0 #962323;
+          transform: translate(0px, 4px); }

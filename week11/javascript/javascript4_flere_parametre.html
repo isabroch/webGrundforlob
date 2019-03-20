@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript</title>
+
+<style media="screen">
+  body{font-family: Gotham, Helvetica, Arial, sans-serif;}
+</style>
+</head>
+
+<body>
+
+  <script>
+    /* document.write("Hello World! <br>");
+
+    var pris1 = 100;
+    var pris2 = 200;
+    var total = pris1 + pris2;
+    document.write(total);
+    document.write ("<br>"); */
+
+    // REGN PRISEN UD:
+    function udregn(pris, varegruppe){
+    //var price = 100;
+    var moms = (pris/100)*25;
+    var total = pris+moms;
+
+    var pristype = "pris inkl. moms";
+    var pristext = varegruppe " : " + pristype + " : " + total;
+    document.querySelector("#prismedmoms").innerHTML = pristext;
+    }
+  </script>
+
+  <p>Beregn den samlede pris, når eks-moms prisen er:</p>
+  <p><button onclick="udregn(100, 'USB Nøgle');">100 for USB</button></p>
+  <p><button onclick="udregn(200, 'CD Pakke');">200 for CD'er</button></p>
+  <p><button onclick="udregn(375, 'DVD Pakke');">375 for DVD'er</button></p>
+  <p id="prismedmoms"></p>
+</body>
+
+</html>

@@ -59,11 +59,9 @@ table {
 	box-sizing: inherit;
 }
 
-body,
 html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-	width: 100vw;
 	box-sizing: border-box;
 }
 
@@ -132,6 +130,11 @@ a {
 	color: RGBA(var(--c-yellow));
 	text-decoration: none;
 	font-weight: 500;
+	transition: 0.4s ease;
+}
+
+a:hover {
+	filter: brightness(1.5);
 }
 
 h1 {
@@ -140,6 +143,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 0.7em;
 	position: relative;
 }
 
@@ -158,6 +162,10 @@ h1::before {
 h1::after {
 	content: "";
 	margin-left: 0.5em;
+}
+
+p {
+	font-size: 1.1em;
 }
 
 /* --- */
@@ -371,6 +379,7 @@ footer {
 	font-size: 1.4em;
 	height: 100px;
 	padding-top: 0.8em;
+	padding-right: 10px;
 }
 
 .footerWrapper ul {
@@ -434,6 +443,7 @@ footer {
 	}
 }
 
+/* main start */
 .chara .flexContain {
 	display: flex;
 	flex-wrap: wrap;
@@ -444,11 +454,6 @@ footer {
 	flex: 1 50%;
 	padding: 7px;
 	position: relative;
-	transition: filter 0.5s ease;
-}
-
-.chara .flexContain section:hover {
-	filter: brightness(1.5);
 }
 
 .chara .flexContain img {
@@ -506,41 +511,51 @@ footer {
 	text-align: center;
 }
 
-/* main end */
-/* --- */
-/* footer start */
-footer {
-	background: RGB(var(--c-black));
-}
-
-.footerWrapper {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: var(--maxDesktop);
-	font-size: 1.4em;
-	height: 100px;
-	padding-top: 0.8em;
-}
-
-.footerWrapper ul {
+.mainContent .--flex {
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: center;
 }
 
-.footerWrapper li {
-	text-align: center;
+@media (min-width: 700px) {
+	.mainContent .--flex {
+		flex-direction: row;
+	}
+	.mainContent .--flex > * {
+		flex: 1;
+	}
 }
 
-.footerWrapper li:first-child {
-	flex: 100%;
+.mainContent .--flex2 {
+	display: flex;
+	flex-direction: column;
 }
 
-.footerWrapper li a {
-	padding: 5px;
-	margin: 5px;
+.mainContent .--flex2 section h2 {
+	margin: 1.2em 0 10px;
 }
 
+@media (min-width: 700px) {
+	.mainContent .--flex2 {
+		flex-direction: row;
+		margin-top: 2em;
+	}
+	.mainContent .--flex2 section h2 {
+		margin-top: 0;
+	}
+	.mainContent .--flex2 > *:nth-child(1) {
+		padding-right: 10px;
+	}
+	.mainContent .--flex2 > *:nth-child(2) {
+		padding-left: 10px;
+	}
+}
+
+.mainContent .--flex2 > * {
+	flex: 1;
+}
+
+/* main end */
 @media (min-width: 800px) {
 	.chara .flexContain {
 		display: flex;
@@ -555,6 +570,10 @@ footer {
 	}
 	.chara .flexContain .findMore a {
 		width: 100%;
+	}
+	figcaption {
+		padding: 5px 0;
+		text-align: right;
 	}
 	.download {
 		flex-direction: row;

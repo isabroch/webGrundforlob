@@ -1,0 +1,277 @@
+// main: style.scss
+
+.cast {
+
+  // header background
+  header {
+    background-position: center center;
+    --sbackground: url("../images/mobilSplash.jpg");
+    --mbackground: url("../images/4.jpg");
+  }
+
+  .moana {
+    .img_wrapper {
+      width: col(7);
+
+      @include media(small) {
+        max-height: 800px;
+        flex: 1 100%;
+      }
+    }
+
+    .maxwidth {
+      position: relative;
+      @include media(small) {
+        flex-direction: column;
+        height: 850px;
+        padding-bottom: 5em;
+      }
+
+      max-width: 1200px;
+    }
+
+    .text {
+      padding-top: 4.75em;
+      width: col(5);
+
+      @include media(small) {
+        order: 1;
+        padding-top: 0;
+      }
+    }
+
+    img,
+    source {
+      @include responsiveImage(contain);
+      @include media(small) {
+        height: 100%;
+        display: initial;
+      }
+    }
+
+    h2 {
+      position: absolute;
+      font-size: 4em;
+      top: .25em;
+      right: .5em;
+
+      @include media(small) {
+        position: initial;
+        top: initial;
+        right: initial;
+        font-size: 3em;
+        width: col(4);
+        order: 1;
+      }
+
+    }
+
+  }
+
+  .discount {
+    position: relative;
+    margin: 4em -10px 5em;
+
+    @include media(small) {
+      order: 1;
+      width: col(5);
+      margin: 1em -10px;
+    }
+
+    img {
+      position: absolute;
+      width: col(5);
+      top: -20px;
+      right: col(0.45);
+
+      @include media(small) {
+        right: -10%;
+      }
+    }
+
+    p {
+      background: color(mid);
+      padding: 5px col(6) 5px col(0.5);
+
+      @include media(small) {
+        width: 110%;
+        padding: 20px col(5) 20px col(0.5);
+      }
+    }
+
+    a {
+      margin-left: col(1);
+      width: col(5);
+      display: block;
+
+      @include media(small) {
+        width: col(8);
+      }
+    }
+  }
+
+  .buyset {
+    margin-top: .5em;
+
+    h2,
+    p {
+      width: col(10);
+      @include media(large) {
+        width: col(4);
+      }
+    }
+
+    a {
+      display: block;
+      width: col(10);
+      margin-bottom: 1em;
+      @include media(large) {
+        width: col(4);
+        margin-bottom: 0;
+      }
+    }
+
+    img {
+      @include responsiveImage(contain);
+      @include media(large) {
+        width: col(6);
+      }
+    }
+
+    .maxwidth {
+      @include media(large) {
+        max-height: 350px;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .characters_activeImage {
+    width: col(12);
+    padding-top: 60%;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+    position: relative;
+
+    &::before {
+      content: "\f104";
+      left: 10px;
+    }
+    &::after {
+      content: "\f105";
+      right: 10px;
+    }
+
+    &::after,
+    &::before {
+      color: white;
+      width: col(1);
+      position: absolute;
+      top: 44%;
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-size: 2em;
+    }
+
+    &.heihei {
+      background-image: url("../images/heihei.jpg");
+    }
+  }
+
+  .characters_available {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      max-width: 200px;
+      flex: 1 0 col(2);
+      margin-right: 10px;
+    }
+
+    .active {
+      outline: color(mid) 3px solid;
+    }
+
+    img {
+      background: white;
+      @include responsiveImage(cover);
+      display: block;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+    }
+  }
+
+  .characters_activeText {
+    margin-top: 20px;
+    width: col(10);
+
+    h3 {
+      font-family: font(display);
+      font-size: 1.5em;
+      font-weight: 700;
+      background: linear-gradient(to right, #4690A4 5%, #004A74 100%);
+      filter: drop-shadow(2px 2px #BDE8E3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    a {
+      display: block;
+      margin-top: 1.5em;
+      width: 100%;
+    }
+
+    .floatLeft {
+      @include media(medium) {
+        float: left;
+        padding-right: 10px;
+        width: col(6);
+      }
+    }
+
+    .floatRight {
+      @include media(medium) {
+        float: right;
+        width: col(5);
+      }
+    }
+  }
+
+  .characters {
+
+    @include media(large) {
+      .maxwidth {
+        flex-direction: column;
+        height: 700px;
+        justify-content: flex-start;
+      }
+
+      &_available {
+        width: col(6);
+      }
+      &_activeImage {
+        width: col(6);
+        padding-top: 30%;
+      }
+      &_activeText {
+        width: col(5.5);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Relative Positioning</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	}
+.clearfix::after{
+	content:"";
+	display:table;
+	clear:both;
+	}
+#wrapper{
+	max-width:960px;
+	margin:0 auto;
+	}
+#content{
+	width:75%;
+	margin:0 auto;
+	border:solid 2px #333;
+	font-family: Helvetica, Geneva, Arial, sans-serif;
+	}
+header{
+	border:1px solid #666;
+	}
+p{
+	padding:0 1em;
+	font-size:0.95em;
+	}
+h1{
+	font-size:3em;
+	color:#777;
+	padding:0.1em 0.3em;
+	}
+h2{
+	font-weight:normal;
+	padding:1em 0;
+	}
+main{
+	border:1px solid #666;
+	}
+section{
+	border:solid 1px #666;
+	width:96%;
+	margin:0.5em auto;
+	background-color:#DDD;
+	}
+section img{
+	margin:1em;
+	border:5px solid #666;
+	float:left;
+	}
+
+	img {
+		position: relative;
+		left: -2em;
+	}
+
+	section:nth-of-type(1) {
+		position: relative;
+		left: -2em;
+		top: 1em;
+		z-index: 6;
+	}
+
+	section:nth-of-type(2) {
+		position: relative;
+		left: 8em;
+		z-index: 5;
+	}
+
+	section:nth-of-type(3) {
+		position: relative;
+		left: -5em;
+		bottom: 1em;
+		z-index: 4;
+	}
+
+	section:nth-of-type(4) {
+		position: relative;
+		left: 2em;
+		bottom: 2em;
+		z-index: 3;
+	}
+
+	section:nth-of-type(5) {
+		position: relative;
+		left: -2em;
+		bottom: 3em;
+		z-index: 2;
+	}
+
+	section:nth-of-type(6) {
+		position: relative;
+		left: 6em;
+		bottom: 4em;
+		z-index: 1;
+	}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+<div id="content">
+
+    <header>
+    	<h1>Arts &amp; Crafts</h1>
+    </header>
+
+    <main>
+
+    	<section class="clearfix bss">
+            <img src="fotos/bss.jpg" alt="broken social scene">
+            <h2>Broken Social Scene: "Broken Social Scene"</h2>
+            <p>After a year of recording and writing, Broken Social Scene is a fine distillation of all the band's ambitions. Hands-in-the-air anthems, daydream comedowns, sprawling jams -- this is a long, winding road of a record that goes places to which even BSS are surprised to have arrived.</p>
+       </section>
+
+       <section class="clearfix apostle">
+           <img src="fotos/apostle.jpg" alt="apostle of hustle">
+           <h2>Apostle of Hustle: "Folkloric Feel"</h2>
+           <p>"Lush, poetic and beautifully disorienting, BSS guitar guru Andrew Whiteman’s long-awaited solo spin is like smoking hash and eating mangoes on a beach in Xanadu, a trip to some sleepwalking spacious state where bossa meets Buckley and Ribot rolls dice with beat poets." (Now Magazine) </p>
+    	</section>
+
+    	<section class="clearfix stars">
+           <img src="fotos/stars.jpg" alt="stars">
+           <h2>Stars: "In Our Bedroom After The War"</h2>
+           <p>Acclaimed Canadian quintet, Stars, are touring Canada alongside the release of a new release which features all new songs, written and recorded this past summer in the bands hometown of Montreal. Stars will unveil the beauty and tragedy of Sad Robots with an all new live show, where they perform songs from all four full-lengths, including In Our Bedroom After The War.</p>
+    </section>
+
+    	<section class="clearfix serene">
+           <img src="fotos/serene.jpg" alt="most serene republic">
+           <h2>The Most Serene Republic: "Population"</h2>
+           <p>The album was self-produced by the band in Toronto over the last year, and was inspired by the sprawling suburbs of their hometown of Milton, Ontario. Musically, they sound as grandiose as ever. On Population, they showcase their prog and jazz influence, while building on the unique sound they carved out with their Arts &nbsp; Crafts debut, Underwater Cinematographer. </p>
+    	</section>
+
+    	<section class="clearfix campesinos">
+           <img src="fotos/campesinos.jpg" alt="campesinos">
+           <h2>Los Campesinos!: "We Are Beautiful, We Are Doomed"</h2>
+           <p>The youthful septet from Cardiff, Wales, Los Campesinos! prove they have no shortage of ingenuity, creativity, and most importantly, energy, with the announcement of their new record. </p>
+    	</section>
+
+    	<section class="clearfix constantines">
+           <img src="fotos/constantines.jpg" alt="constantines">
+           <h2>Constantines: "Hard Feelings, Easy Money"</h2>
+           <p>Constantines' music, as well as their thundering and inspired live shows, have continually earned the band a loyal following from both music writers and music fans alike, drawing comparisons to The Clash, Bruce Springsteen, Fugazi and Nick Cave.</p>
+    	</section>
+
+  	</main>
+
+</div> <!-- end content -->
+</div> <!-- end wrapper -->
+</body>
+</html>

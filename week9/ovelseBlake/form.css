@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* CSS Document */
+body,
+html {
+	height: 100%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	background-color: #7ebfd8;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	padding-bottom: 1em;
+	line-height: 1.4em;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+#wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	height: 100%;
+}
+/* - - - - - - - - - - - - - - - - - - - */
+h1 {
+	font-family: "Monoton", cursive;
+	font-size: 4em;
+	font-weight: normal;
+}
+
+section {
+	display: flex;
+	margin: 2em 0;
+}
+
+section div {
+	flex: 1;
+	background-color: #6aa2b7;
+	padding: 1%;
+	border-radius: 4px;
+}
+
+section div:nth-child(2) {
+	margin: 0 2%;
+}
+
+/* Footer: */
+footer {
+	background-color: #274256;
+	color: #AAA;
+	display: flex;
+}
+
+footer > div {
+	flex: 1;
+	margin: 6%;
+}
+
+h3 {
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+
+/* ------------- Form: *-----------*/
+
+form > div {
+	flex-wrap: wrap;
+	display: flex;
+	margin: 1em 0;
+}
+
+form > div > label {
+	flex: 1;
+}
+
+form > div > div,
+form > div > input {
+	flex: 3;
+	border-radius: 5px;
+}
+
+.interests {
+	display: flex;
+	justify-content: space-between;
+}
+
+.interests input {
+	margin: 0 1em;
+}
+
+input[type="submit"] {
+	margin-top: 2em;
+}
+
+/* ------------- Contact: ------------- */
+table {
+	width: 100%;
+	height: 80%;
+}
+
+td,
+th {
+	font-weight: 500;
+	vertical-align: top;
+	text-align: left;
+}
+
+th {
+	width: 40%;
+}
+
+td {
+	width: 60%;
+}
+
+/* ------------- Reply: ------------- */
+.thankyou {
+	text-align: center;
+	padding: 6em 0;
+}
+
+/* ------------- Mobile: ------------- */
+@media screen and (max-width:500px) {
+	section, footer {
+		flex-direction: column;
+	}
+
+	section div {
+		margin: 0.5em 0.5em;
+	}
+
+	}

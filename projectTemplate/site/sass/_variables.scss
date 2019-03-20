@@ -1,0 +1,46 @@
+// main: style.scss
+
+// Variables
+// Uses
+$fonts: (
+display: ('Kalam', cursive),
+plain: ('Open Sans', sans-serif)
+);
+
+$colors: (
+white: #FFF,
+black: #000,
+light: #EFECDC,
+mid: #BDE8E3,
+dark: #004A74,
+cta: #21BCD0
+);
+
+$breakpoints: (
+small: 320px,
+medium: 768px,
+large: 1440px
+);
+
+
+// max-width defined for @extend %max;
+%max {
+  max-width: 1440px;
+}
+
+// responsive image mixin
+@mixin responsiveImage($percent, $maxwidth) {
+    width: $percent;
+    max-width: $maxwidth;
+    height: auto;
+    display: inline-block;
+    object-fit: cover;
+}
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function font($key) {
+  @return map-get($fonts, $key);
+}

@@ -1,0 +1,150 @@
+
+@import 'site';
+
+/* main start */
+
+.chara {
+  .flexContain {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 7px;
+
+    section {
+      flex: 1 50%;
+      padding: 7px;
+      position: relative;
+    }
+
+    img {
+      object-fit: cover;
+      height: 150px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .findMore,
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    h3 {
+      background: RGBA(color('black'),0.75);
+      position: absolute;
+      z-index: 2;
+      bottom: 10px;
+      padding: 7px 0;
+      width: calc(100% - 14px;);
+    }
+
+    .findMore a {
+      flex: 1 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 10%;
+      height: 100%;
+      background: RGBA(color('yellow'), 0.2);
+    }
+  }
+}
+
+.download {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2em 5%;
+
+  a {
+    flex: 1;
+    padding: 20px 10px;
+    border: 2px inset RGB(color('yellow'));
+    background: RGBA(color('black'),0.6);
+    border-radius: 10px;
+    margin: 5px 10px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+.mainContent .--flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+
+    > * {
+      flex: 1;
+    }
+  }
+
+}
+
+.mainContent .--flex2 {
+  display: flex;
+  flex-direction: column;
+
+  section h2 {
+    margin: 1.2em 0 10px;
+  }
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    margin-top: 2em;
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    > *:nth-child(1) {
+      padding-right: 10px;
+    }
+
+    > *:nth-child(2) {
+      padding-left: 10px;
+    }
+  }
+
+  > * {
+    flex: 1;
+
+  }
+}
+/* main end */
+
+@media (min-width: 800px) {
+  .chara {
+    .flexContain {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 7px;
+
+      section {
+        flex: 1 20%;
+      }
+
+      img {
+        height: 300px;
+      }
+
+      .findMore a {
+        width: 100%;
+      }
+    }
+  }
+
+  figcaption {
+    padding: 5px 0;
+    text-align: right;
+  }
+  .download {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Forms</title>
+</head>
+<body>
+  <!-- onsubmit="return false;" prevents data from being sent -->
+  <form action="" onsubmit="return false;">
+    <input name="tal1"> x <input name="tal2"> = <input name="resultat">
+    <button onclick="gang(this.form);">Gang</button>
+  </form>
+
+  <script>
+    function gang(minForm) {
+      var firstTal = Number(minForm.tal1.value);
+      var secondTal = +minForm.tal2.value;
+      minForm.resultat.value = firstTal * secondTal;
+    }
+  </script>
+</body>
+</html>

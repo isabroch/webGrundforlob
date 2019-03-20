@@ -1,0 +1,87 @@
+/* Standard styling i.e. resetting styles and image styles */
+/* resetting styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+html {
+  box-sizing: border-box;
+}
+
+/* no horizontal scrolling issues, smooth scrolling on in page links */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+/* making images inline-block and responsive to their container/wrapper */
+img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+fieldset{
+ width:350px;
+ padding:2%;
+ font-size:0.9em;
+ margin: 1%;
+ }
+
+.new {
+  width: 300px;
+  padding: 2%;
+  font-size: 0.9em;
+}
+
+.new input[type="submit"] {
+  width: 100%;
+}
+
+
+.clearfix::after{
+ content:"";
+ display:table;
+ clear:both;
+ }
+ .floating {
+ width:250px;
+ padding:2%;
+ font-size:0.9em;
+ }
+ .floating input[type="submit"]{
+ width:100%;
+ }
+ .floating label{
+ width:36%;
+ float:left;
+ clear:both;
+ margin-bottom:1em;
+ }
+ .floating input{
+ width:60%;
+ float:right;
+ }
+
+ .flex {
+  width:250px;
+  padding:2%;
+  font-size:0.9em;
+  }
+  .flex>div{
+  display:flex;
+  margin-bottom:1em;
+  }
+  .flex input[type="submit"]{
+  width:100%;
+  }
+  .flex label{
+  flex:2;
+  }
+  .flex input{
+  flex:3;
+  }

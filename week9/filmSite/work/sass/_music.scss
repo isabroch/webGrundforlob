@@ -1,0 +1,121 @@
+// main: style.scss
+
+.music {
+
+  header {
+    --sbackground: url("../images/mobilSplash3.jpg");
+    --mbackground: url("../images/3.jpg");
+  }
+
+  .buy {
+    padding-bottom: 10vh;
+
+    @include media(large) {
+      .maxwidth {
+        display: grid;
+        grid-template-columns: 7fr 5fr;
+        margin-bottom: 100px;
+      }
+
+      h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+
+      .text {
+        padding: 10px;
+      }
+
+      .cta {
+        justify-self: center;
+        width: col(8);
+      }
+    }
+
+    img {
+      @include responsiveImage(contain);
+      height: 100%;
+
+      @include media(large) {
+        height: auto;
+      }
+    }
+
+    .text, a {
+      width: col(10);
+    }
+  }
+
+  .videos {
+    margin-top: 0;
+
+    .maxwidth {
+      @include media(large) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    p:first-of-type {
+      width: col(10);
+    }
+
+    .maxwidth_video {
+      width: 100%;
+      background: none;
+    }
+
+    .maxwidth_video_wrapper {
+      height: initial;
+    }
+
+    .videoList {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+
+      .vidThumbnail {
+        width: col(6);
+
+        img {
+          width: 100%;
+          padding: 5px;
+        }
+      }
+    }
+
+    @include media(large) {
+      .videoList {
+        width: 50%;
+      }
+
+      .maxwidth_video {
+        width: 50%;
+      }
+      .maxwidth_video_wrapper {
+        padding: 10px 0;
+      }
+
+      .maxwidth {
+            height: 60vw;
+            max-height: 880px;
+        justify-content: flex-start;
+      }
+
+      h2, p:first-of-type {
+        width: col(4);
+      }
+
+      p {
+        flex-basis: 80%;
+      }
+    }
+  }
+
+  .listen {
+    h2 {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+}

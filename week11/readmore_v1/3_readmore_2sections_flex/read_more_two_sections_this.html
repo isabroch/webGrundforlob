@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read More - Two Sections</title>
+<link href="more2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+<header>
+	<h1>Demo: åbn 2 nye tekstafsnit med javascript</h1>
+</header>
+
+<main>
+
+<div class="col a">
+	<img src="humpty.gif" width="212" height="252" alt="Alice"/>
+</div>
+
+<!-- midtersøjle: -->
+<div class="col b">
+	<h2>Open source software</h2>
+	<p>Open source betyder 'åbne' softwarelicenser.</p> 
+    <p>Open source licenser har dét til fælles, at de giver brugeren af softwaren lov til at:</p>
+    <p> - få adgang til programmets kildekode (man skal have lov til at få det som programmøren skrev).</p>
+    <p> - ændre programmets kildekode og lave en ny version af programmet.</p> 
+    <p> - samt videregive programmet og/eller din nye version af programmet.</p> 
+
+	<p class="knap" onclick="vis(this, 'xtra1');">Læs mere...</p>
+	
+    		 <!-- det skjulte afsnit: -->
+            <div id="xtra1">
+            
+            <p>Desuden må man ikke diskriminere personer, grupper, systemer eller brugen af programmet.</p><p>I alt er der i skrivende stund 10 krav, for at et program kan kaldes Open Source. Open Source bevægelsen opstod som modstykke til FSF som i modsætning til Open Source bevægelsen tillægger licensen moralsk betydning, og derfor foretrækker fri software. Open Source tillader flere licenser end fri software.</p>
+            <p>Ofte misforstår folk open source og tror, at der er krav om at de afledte værker også skal frigives som open source, hvilket ikke er tilfældet. Dog er der visse open source-licenser som har disse krav, som populært kaldes copyleft-licenser.</p>
+            <p>Begrebet open source blev skabt som en kommerciel version af fri software (eller på engelsk: Free Software). Nogen virksomheder bryder sig ikke om at fri software har et moralsk budskab. Derfor foretrækker de Open Source som ikke er "belastet" af moral eller etik.</p>
+            </div>
+            <!-- ---- -->
+    
+</div>
+<!-- midtersøjle slut -->
+
+
+<div class="col c">
+	<h2>Linux - et open source styresystem.</h2> 
+    <img src="linux_pingvin.png" width="170" height="197" alt="Linux penguin"/>
+    <p>Linux-projektet blev startet i 1991 af finnen Linus Torvalds, som fik den gode idé at bede andre om at hjælpe via internettet. Kildekoden var offentligt tilgængelig, og det har efterhånden fået mange tusinde til at deltage i projektet med at videreudvikle Linux-kernen.  </p>
+
+	<p class="knap" onclick="vis(this, 'xtra2');">Læs mere...</p>
+	
+    		<!-- det skjulte afsnit: -->
+           	<div id="xtra2">
+            <p>Udviklingen af Linux-kernen foregår stadig i et internationalt miljø af interesserede programmører. Dog er mange af de vigtigste programmører i dag ansat af forskellige virksomheder, der har en interesse i at støtte udviklingen af Linux-kernen.</p>
+			<p>Linux-kernen blev oprindeligt kun udviklet til Intel-baserede pc'er, men sidenhen er den udviklet til at kunne bruges på næsten alle computertyper fra indlejrede mikrosystemer til store mainframes. Kernen udmærker sig ved at være frit tilgængelig, relativt stabil (i det mindste på x86), og der er fri adgang til kildekoden, som er sikret ved hjælp af GPL, som er en fri software-licens.</p>
+            </div>
+			<!-- ---- -->
+            
+</div>
+
+</main>
+
+<footer>&nbsp;</footer>
+
+</div> <!-- end wrapper -->
+    
+<script>
+	function vis(knap, afsnit){
+		var tekst=document.querySelector("#"+afsnit);
+		if(tekst.style.display!=="block"){
+			tekst.style.display = "block";
+			knap.innerHTML="Læs mindre..";
+		}else{
+			tekst.style.display = "none";
+			knap.innerHTML="Læs mere..";
+		}
+	}
+</script>
+</body>
+</html>

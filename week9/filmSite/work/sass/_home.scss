@@ -1,0 +1,205 @@
+// main: style.scss
+
+.home {
+
+  // header background that changes on each page
+  header {
+    --sbackground: url("../images/mobilSplash2.jpg");
+    --mbackground: url("../images/1.jpg");
+  }
+
+  // section watch
+  .watch {
+    .img_wrapper {
+      flex-basis: col(8);
+      margin: .5em 0;
+      order: 2;
+
+    }
+
+    .maxwidth {
+      @include media(medium) {
+        max-width: 840px;
+      }
+    }
+
+    img {
+      @include responsiveImage(initial);
+    }
+
+    a,
+    p,
+    q {
+      flex-basis: col(10);
+      order: 2;
+    }
+
+    h2 {
+      order: 1;
+    }
+
+    @include media(small) {
+      .maxwidth {
+        display: block;
+
+        &::after {
+          display: block;
+          content: "";
+          clear: both;
+        }
+      }
+
+      .img_wrapper {
+        width: col(6);
+        float: left;
+        padding-right: 1em;
+      }
+
+      h2 {
+        margin-top: 1.5em;
+      }
+
+      a {
+        width: col(4);
+        display: block;
+        margin-left: col(7);
+      }
+    }
+  }
+
+  // section about moana
+  .about {
+    padding-top: 30vw;
+    margin-top: 1vw;
+
+    .maxwidth {
+      max-width: 1150px;
+    }
+
+    @include media(medium) {
+      padding-top: 10vw;
+    }
+
+    @include media(large) {
+      padding-top: 180px;
+    }
+
+    .about_text,
+    h2 {
+      flex-basis: col(10);
+    }
+
+    .about_text {
+      @include media(medium) {
+        column-count: 2;
+      }
+
+      p:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // section shop
+  .shop {
+    @include media(large) {
+      padding-top: 5vw;
+    }
+
+    h2,
+    p {
+      flex-basis: col(10);
+    }
+
+    p {
+      padding-right: 1em;
+
+      @include media(medium) {
+        padding-right: 10em;
+      }
+
+      @include media(large) {
+        flex-basis: col(5);
+        margin-right: col(2);
+        padding-right: 0;
+      }
+    }
+
+    &_section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+
+      @include media(medium) {
+        flex-direction: row;
+      }
+    }
+
+    &_section section {
+      margin: 1em 0;
+      width: 100%;
+      max-width: 300px;
+
+      @include media(medium) {
+        flex-basis: col(4);
+
+        &:first-of-type {
+          margin: 1em 20px 1em 0;
+        }
+
+        &:nth-of-type(2) {
+          margin: 1em 20px;
+        }
+
+        &:last-of-type {
+          margin: 1em 0 1em 20px;
+        }
+      }
+
+      @include media(large) {
+        max-width: 400px;
+      }
+    }
+
+    .cta.secondary,
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .cta.primary {
+      flex-basis: col(12);
+      order: 2;
+
+      @include media(medium) {
+        flex-basis: col(6);
+      }
+
+      @include media(large) {
+        order: initial;
+        flex-basis: col(3);
+      }
+    }
+
+    padding-bottom: 12vw;
+  }
+
+  // splash
+  .splash {
+    margin-top: -6vw;
+
+    &ClipPath {
+      position: absolute;
+      height: 0;
+      width: 0;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      clip-path: url("#splashWave");
+    }
+  }
+}

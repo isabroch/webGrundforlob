@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color:#000;
+}
+#wrapper{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:0.8em;
+	color:#FFF;
+	max-width:940px;
+	margin:1em auto;
+}
+h1,h2{
+	text-align:center;
+	font-weight:normal;
+}
+h2{
+	margin-bottom:2em;
+}
+a{
+	outline:none;
+	text-decoration:none;
+}
+a:link, a:visited, a:hover, a:active{
+	color:#CCC;
+}
+#galleri{
+	max-width:608px;
+	margin:auto;
+}
+#galleri img{
+	width:100%;
+	height:auto;
+}
+#photo{
+	border:1px solid #FFF;
+}
+#pile{
+	margin-top:1em;
+	text-align:center;
+}
+#pile img{
+	padding:0 1em;
+	cursor:pointer;
+}

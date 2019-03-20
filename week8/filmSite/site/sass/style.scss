@@ -1,0 +1,14 @@
+// Standard styling of things
+@import 'standard';
+// Column styling using floats
+@import 'col';
+
+/* Variables */
+:root {
+  /* Fonts */
+  --font: 'Roboto', sans-serif;
+
+  /*Colors */
+  --black: #161517;
+  --white: #f7f3ec;
+}

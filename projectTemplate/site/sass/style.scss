@@ -1,14 +1,8 @@
 // Standard styling of things
 @import 'standard';
-// Column styling using floats
-@import 'col';
+@import 'variables';
 
-/* Variables */
-:root {
-  /* Fonts */
-  --font: 'Roboto', sans-serif;
+// General page style
+@import 'all';
 
-  /*Colors */
-  --black: #161517;
-  --white: #f7f3ec;
-}
+// Page styles

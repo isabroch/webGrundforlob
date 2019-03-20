@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* tving alle browsere til at gøre plads til scrollbar, så siden ikke hopper til venstre når den bliver længere :  */
+html{
+	overflow-y:scroll;  
+	-moz-scrollbars:vertical;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+#wrapper{
+	max-width:960px;
+	width:98%; 
+	margin:0 auto; 
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1{
+	font-size:1.2em;
+	text-align:center;
+	padding:0.5em 0 1em;
+}
+h2{
+	font-size:1.1em;
+}
+main{
+    display:flex;
+}
+.col, footer{
+	border: solid 1px #666;
+}
+.col{
+    padding:0.5%;
+}
+.a img{
+	width:100%;
+	height:auto;
+	border:solid 1px #333;	
+}
+.a{
+	background-color:#CCC; 
+    flex:6;
+}
+.b{
+	background-color:#DDD; 
+    flex:10;
+	margin:0 0.5%;
+}
+.c{
+	background-color:#EEE;  
+    flex:10;
+}
+.c img{
+	float:right;
+}
+h2, p{
+	padding:0 0 0.5em;
+}
+p{
+	font-size:0.9em;
+}
+footer{
+	background-color:#AAA; 
+	height:2em; 
+	margin-top:0.5em;
+}
+
+/* for "læs mere" :  */
+#xtra{
+	display:none; 
+	padding:0; 
+	margin:0;
+}
+#knap{
+	cursor:pointer; 
+	color:#00C;
+}
+/* -------------  */
+
+@media screen and (max-width:480px){
+    main{
+        flex-direction:column;
+    }
+	.col, .a, .b, .c{
+		padding:1em 1%;
+		margin:1em 0;
+		/*height:auto;*/
+	}
+}

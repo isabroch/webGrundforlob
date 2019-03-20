@@ -1,0 +1,61 @@
+// main: style.scss
+
+// variables (get-map)
+$fonts: (
+display: ('Kalam', cursive),
+plain: ('Open Sans', sans-serif)
+);
+
+$colors: (
+white: #FFF,
+black: #000,
+light: #EFECDC,
+mid: #BDE8E3,
+dark: #004A74,
+cta: #21BCD0
+);
+
+$breakpoints: (
+small: 450px,
+medium: 768px,
+large: 1010px,
+massive: 2000px
+);
+
+$gradients: (
+dark: #{#4690A4 5%, #004A74 100%},
+light: #{#EFECDC 5%, #D1BC8A 100%},
+);
+
+$max: 1440px;
+
+
+// responsive image mixin
+@mixin responsiveImage($fit) {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    object-fit: $fit;
+}
+
+// variable functions
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function font($key) {
+  @return map-get($fonts, $key);
+}
+
+@function grad($key) {
+  @return map-get($gradients, $key);
+}
+
+@mixin media($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) { @content; }
+}
+
+// function for finding column widths
+@function col($num) {
+  @return percentage($num/12)
+}

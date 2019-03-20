@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto Galleri</title>
+<link href="tim_walker.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <h1>Tim Walker</h1>
+    <h2>photographer extraordinaire</h2>
+
+    <div id="galleri">
+        <img id="photo" src="fotos/After-the-flood-001.jpg" alt="tim walker fotos">
+    </div>
+
+    <div id="pile">
+        <img onclick="photo('back')" src="pil-left.gif" width="24" height="26" alt="back">
+        <img onclick="photo('forward')" src="pil-right.gif" width="24" height="26" alt="forward">
+    </div>
+</div><!--end wrapper-->
+
+<script>
+	var index=0;
+	var nyFoto;
+	var fotoListe=["After-the-flood-001", "Eglingham-ch-008", "InsideOutside-004", "Kristen-McMe-005", "Lily-Cole-and-giant-fish-007", "Lindsey-Wixs-003", "Pastel-cats-012", "Snow-in-Summer-009", "Tilda-Swinton-011"];
+	var display = document.querySelector("#photo");
+
+  function photo(direction){
+    if (direction == "back") {
+      if (index>0) {
+  			index--;
+  		} else {
+  			index = fotoListe.length-1;
+  		}
+    } else if(direction == "forward") {
+      if (index<fotoListe.length-1) {
+  			index++;
+  		} else {
+  			index = 0;
+  		}
+    }
+
+    nyFoto = fotoListe[index];
+		display.setAttribute("src", "fotos/"+nyFoto+".jpg")
+  }
+
+  document.onkeydown = function(e){
+    // output code depending on which 'case'. basically like a faster version of if, elseif, elseif, elseif.
+    switch(e.key) {
+      case "ArrowLeft":
+        // left
+        photo('back');
+        break;
+      case "ArrowRight":
+        // right
+        photo('forward');
+        break;
+    }
+  }
+</script>
+</body>
+</html>

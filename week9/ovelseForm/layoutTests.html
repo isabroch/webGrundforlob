@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Meta tags like title, description, tags etc. -->
+  <title>Building Forms | Layout Types</title>
+
+  <!-- CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Testing post vs get method, plus email input type -->
+  <p>Tilmeld mig til nyhedsbrevet</p>
+  <form action="svar.html" method="get">
+    <input type="email" name="email" value="Email">
+    <input type="submit" value="Send">
+  </form>
+
+  <!-- Testing fieldset + legend container, along with br layouting style -->
+  <form action="svar.html" method="get">
+    <fieldset>
+      <legend>Hvem er du?</legend><br>
+      Fornavn: <input type="text" name="first" value=""> <br><br>
+      Efternavn: <input type="text" name="last" value=""> <br><br>
+      Vejnavn og -nr.: <input type="text" name="vej" value=""> <br><br>
+      Postnr. og by: <input type="text" name="post" value=""> <br><br>
+      Email-adresse: <input type="text" name="email" value=""> <br><br>
+
+      <input type="submit" value="Send forespørgsel">
+    </fieldset>
+  </form>
+
+  <!-- Testing table styling -->
+  <form action="svar.html" class="new" method="get">
+    <table>
+      <tr>
+        <td>Fornavn:</td>
+        <td><input type="text" name="name1" value=""></td>
+      </tr>
+      <tr>
+        <td>Efternavn:</td>
+        <td><input type="text" name="name2" value=""></td>
+      </tr>
+      <tr>
+        <td>Adresse:</td>
+        <td><input type="text" name="address" value=""></td>
+      </tr>
+      <tr>
+        <td>Postnr. og by:</td>
+        <td><input type="text" name="zip" value=""></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" name="mail" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Send"></td>
+      </tr>
+    </table>
+  </form>
+
+  <!-- Testing floating + labels styling -->
+  <form action="tilmeld.php" method="post" class="clearfix floating">
+    <label for="fornavn">Fornavn:</label><input type="text" name="name1" id="fornavn" value="">
+    <label for="efternavn">Efternavn:</label> <input type="text" name="name2" id="efternavn" value="">
+    <label for="adresse">Adresse:</label> <input type="text" name="address" id="adresse" value="">
+    <label for="zip">Postnr. og by:</label> <input type="text" name="zip" id="zip" value="">
+    <label for="email">Email:</label> <input type="text" name="mail" id="email" value="">
+    <input type="submit" value="Send">
+  </form>
+
+  <!-- Testing flexbox layout styling -->
+  <form action="tilmeld.php" method="post" class="clearfix flex">
+    <div><label for="fornavn">Fornavn:</label><input type="text" name="name1" id="fornavn" value=""></div>
+    <div><label for="efternavn">Efternavn:</label> <input type="text" name="name2" id="efternavn" value=""></div>
+    <div><label for="adresse">Adresse:</label> <input type="text" name="address" id="adresse" value=""></div>
+    <div><label for="zip">Postnr. og by:</label> <input type="text" name="zip" id="zip" value=""></div>
+    <div><label for="email">Email:</label> <input type="text" name="mail" id="email" value=""></div>
+    <input type="submit" value="Send">
+  </form>
+</body>
+
+</html>

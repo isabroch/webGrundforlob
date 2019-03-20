@@ -1,0 +1,54 @@
+
+@import 'site';
+
+@function size($property) {
+  @return 100% / 12 * $property - 0.01%;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid RGB(color('yellow'));
+}
+.img_contain {
+  display: flex;
+  position: relative;
+  padding: 0 5px 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  img {
+    display: block;
+  }
+
+  > * {
+    padding: 5px;
+    width: 100px;
+    transition: filter 0.2s ease;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    flex: 0 size(6);
+
+    @media screen and (min-width: 400px) {
+      flex-basis: size(4);
+    }
+
+    @media screen and (min-width: 570px) {
+      flex-basis: size(3);
+    }
+
+    @media screen and (min-width: 800px) {
+      flex-basis: size(2);
+    }
+  }
+}

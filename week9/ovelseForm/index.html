@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kontakt Form</title>
+
+  <style>
+    body {
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+    form {
+      width: 280px;
+      padding: 1%;
+    }
+
+    fieldset {
+      width: 100%;
+    }
+
+    fieldset > div > div {
+      display: flex;
+      margin: 1em 0;
+      width: 100%;
+    }
+
+    .checkboxes div {
+      justify-content: space-between;
+    }
+
+    .about div {
+      justify-content: space-between;
+    }
+
+    .buttons div {
+      justify-content: space-between;
+    }
+    .buttons input {
+      flex: 1;
+      max-width: 48%;
+    }
+
+    .historie div:first-child {
+      flex-wrap: wrap;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    label {
+      margin-right: 1em;
+    }
+
+    .about div label {
+      flex: 2;
+    }
+
+    .about div input {
+      flex: 5;
+    }
+
+    .valger div:first-child {
+      justify-content: space-between;
+    }
+
+    select {
+      flex: 1;
+          margin-right: 6em;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="svar.html" method="get">
+    <fieldset>
+      <legend>Tilmeld mig til nyhedsbrevet:</legend>
+      <div class="about">
+        <div>
+          <label for="fornavn">Fornavn:</label>
+          <input type="text" name="fornavn" id="fornavn">
+        </div>
+        <div>
+          <label for="efternavn">Efternavn:</label>
+          <input type="text" name="efternavn" id="efternavn">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div>
+          <label for="mobil">Mobil:</label>
+          <input type="tel" name="mobil" id="mobil" placeholder="12 34 56 78">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="checkboxes">
+        <div>
+          <label for="modtageTilbud">Jeg vil gerne modtage andre tilbud:</label>
+          <input type="checkbox" name="modtageTilbud" id="modtageTilbud">
+        </div>
+        <div>
+          <label for="acceptererBetingelserne">Jeg accepterer betingelserne:</label>
+          <input type="checkbox" name="acceptererBetingelserne" id="acceptererBetingelserne">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="valger">
+        <div>
+          <label for="alder">Alder:</label>
+          <label> &lt;18: <input type="radio" name="alder" id="alder" value="&lt;18"></label>
+          <label> 18-24: <input type="radio" name="alder" id="alder" value="18-24"></label>
+          <label> &gt;24: <input type="radio" name="alder" id="alder" value="&gt;24"></label>
+        </div>
+        <div>
+          <label for="sprog">Sprog:</label>
+          <select name="sprog" id="sprog">
+            <option value="dansk">Dansk</option>
+            <option value="svensk">Svensk</option>
+            <option value="norsk">Norsk</option>
+            <option value="finsk">Finsk</option>
+            <option value="islandsk">Islandsk</option>
+
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="historie">
+        <div>
+          <label for="historie">Send os din historie:</label><textarea name="historie" id="historie" rows="6"></textarea>
+        </div>
+        <div>
+          <label for="foto">Foto:</label><input type="file" name="foto" id="foto" accept="image/*">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="buttons">
+        <div>
+          <input type="reset" value="Ryd felterne"><input type="submit" value="Send">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</body>
+
+</html>

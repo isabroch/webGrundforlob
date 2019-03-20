@@ -1,0 +1,195 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+html{
+	overflow-y:scroll;
+	-moz-scrollbars:vertical;
+}
+body {
+	background-color:#42a3b4;
+}
+#wrapper{
+	font-family:Tahoma, Geneva, sans-serif;
+	max-width:900px;
+	width:98%;
+	margin:1em auto;
+}
+.clearfix:after{
+	display:table;
+	content:"";
+	clear:both;
+}
+h1{
+	max-width:495px;
+	margin:0 auto;
+}
+img{
+	width:100%;
+	height:auto;
+	border:1px solid #666;
+	padding:5px;
+}
+a img{
+	border:none;
+	padding:0;
+}
+a{
+	outline:none;
+	text-decoration:none;
+	color:#f9e43b;
+}
+nav{
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	margin-bottom:1em;
+}
+nav a{
+	font-family: 'Parisienne', cursive;
+	font-size:2em;
+	display:block;
+	float:left;
+	width:25%;
+	text-align:center;
+	padding:0.1em 0;
+}
+.current_page{
+	color:#f9c63b;
+}
+
+p{
+	font-size:0.85em;
+	line-height:1.5em;
+	color:#222;
+	padding-bottom:1em;
+}
+
+footer{
+	text-align:center;
+	padding:1em 0;
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	margin-top:2em;
+}
+footer a{
+	padding:2em;
+}
+
+/* stills: */
+.stills{
+	max-width:710px;
+	margin:0 auto;
+	text-align:center;
+}
+#thumbs{
+	margin-top:1em;
+}
+#thumbs img{
+	width:82px;
+	cursor:pointer;
+}
+.arrows img{
+	width:24px;
+	border:none;
+	padding:0;
+	margin:20px 10px;
+	cursor:pointer;
+}
+
+#thumbs .active {
+	border: 6px solid yellow;
+    padding: 0px;
+}
+
+/* columns: */
+.column{
+	width:49%;
+	padding:5px;
+	border:solid 1px #666;
+}
+.a{
+	float:left;
+}
+.b{
+	float:right;
+}
+.a img{
+	padding:0;
+	border:0;
+}
+
+/* info: */
+#read_more{
+	display:none;
+}
+
+
+/* others: */
+.b ul{
+	list-style-type:none;
+}
+.b li{
+	cursor:pointer;
+	color:#f9e43b;
+	font-size:0.85em;
+	padding:1em;
+}
+
+/* trailer: */
+.video-box{
+	border:1px solid #666;
+	padding:5px;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* media queries: */
+@media screen and (max-width:600px){
+	nav a{
+		font-size:1.5em;
+	}
+	.arrows{
+		display:none;
+	}
+	footer a{
+		font-size:0.8em;
+		padding:1em;
+	}
+}
+
+@media screen and (max-width:480px){
+	nav a{
+		font-size:2em;
+		float:none;
+		width:100%;
+	}
+	footer a{
+		display:block;
+		width:100%;
+		padding:1em;
+	}
+	.column{
+		width:100%;
+		float:none;
+	}
+	.a{
+		margin-bottom:1em;
+	}
+	.b li{
+		text-align:center;
+	}
+}

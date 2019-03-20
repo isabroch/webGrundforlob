@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript Forms</title>
+
+  <style>
+  body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+  }
+  form {
+    width: 25%;
+    margin: 0 auto;
+  }
+  #resultat {
+    width: 10%;
+    margin: 0 auto;
+    background-color: #FF0;
+    border: solid 1px #000;
+    text-align: center;
+    margin-top: 1em;
+  }
+</style>
+</head>
+<body>
+  <!-- onsubmit="return false;" prevents data from being sent -->
+  <form action="" onsubmit="return false;">
+    <input name="tal1"> x <input name="tal2">
+    <button onclick="gang(this.form);">Gang</button>
+  </form>
+
+  <div id="resultat">&nbsp;</div>
+
+  <script>
+    function gang(minForm) {
+      var firstTal = Number(minForm.tal1.value);
+      var secondTal = +minForm.tal2.value;
+      var result = firstTal * secondTal;
+      document.querySelector("#resultat").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

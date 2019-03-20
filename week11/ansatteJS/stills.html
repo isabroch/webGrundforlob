@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="Wes Andersen, Mooonrise Kingdom">
+<meta name="description" content="Fan site about the independent American film-maker Wes Andersen and his film Moonrise Kingdom">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonrise Kingdom</title>
+<link href="moonrise.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet" type="text/css">
+
+<script src="script.js" defer charset="utf-8"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+    <h1>
+    	<a href="index.html"><img src="images/moonrise_kingdom_title.jpg" width="495" height="100" alt="Moonrise Kingdom"></a>
+    </h1>
+
+    <nav class="clearfix">
+        <a href="stills.html" class="current_page">Stills</a>
+        <a href="info.html">Info</a>
+        <a href="trailer.html">Trailer</a>
+        <a href="others.html">Other Films</a>
+    </nav>
+</header>
+
+
+<main class="stills">
+	<img src="images/stills1.jpg" width="700" height="410" alt="stills from the movie" id="photoseries"/>
+    <div id="thumbs" class="clearfix">
+    	<img src="images/thumbs/stills1.jpg" width="70" height="41" alt="still1" onclick="still(1);" class="active"/>
+        <img src="images/thumbs/stills2.jpg" width="70" height="41" alt="still2" onclick="still(2);"/>
+        <img src="images/thumbs/stills3.jpg" width="70" height="41" alt="still3" onclick="still(3);"/>
+        <img src="images/thumbs/stills4.jpg" width="70" height="41" alt="still4" onclick="still(4);"/>
+        <img src="images/thumbs/stills5.jpg" width="70" height="41" alt="still5" onclick="still(5);"/>
+        <img src="images/thumbs/stills6.jpg" width="70" height="41" alt="still6" onclick="still(6);"/>
+        <img src="images/thumbs/stills7.jpg" width="70" height="41" alt="still7" onclick="still(7);"/>
+        <img src="images/thumbs/stills8.jpg" width="70" height="41" alt="still8" onclick="still(8);"/>
+    </div>
+
+    <div class="arrows">
+		<img src="images/arrow_left.png" width="24" height="26" alt="tilbage" onclick="backwards();" id="back">
+		<img src="images/arrow_right.png" width="24" height="26" alt="frem" onclick="forwards();" id"next">
+	</div>
+</main>
+
+
+<footer>
+    <a href="http://rushmoreacademy.com/" target="_blank">The Rushmore Academy</a>
+    <a href="http://www.imdb.com/name/nm0027572/" target="_blank">Wes Andersen at IMDB</a>
+    <a href="http://en.wikipedia.org/wiki/Wes_Anderson" target="_blank">Wes Andersen at Wikipedia</a>
+</footer>
+
+</div><!-- end wrapper -->
+</body>
+</html>

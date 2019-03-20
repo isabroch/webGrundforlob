@@ -1,0 +1,494 @@
+// main: style.scss
+
+html {
+  font-family: font(plain);
+  @include media (medium) {
+    font-size: 1.25em;
+  }
+}
+
+// header
+header {
+  height: 95vh;
+  background-image: linear-gradient(to bottom, rgba(color(dark), 0) 50%, color(dark) 92.5%), var(--sbackground);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  margin-bottom: 1em;
+
+  @include media(medium) {
+    height: 85vh;
+    background-image: var(--mbackground);
+    margin-bottom: -8vw;
+    background-position: bottom center;
+  }
+
+  .nav_wrapper {
+    height: 100%;
+    @include media(medium) {
+      background: rgba(color(dark),0.75);
+      height: 72px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+    }
+  }
+
+  nav {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    @include media(medium) {
+      max-width: $max;
+      flex-direction: row;
+    }
+  }
+
+  a {
+    width: 100%;
+    display: block;
+    font-family: font(display);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: color(white);
+
+    &:hover {
+      color: color(mid);
+    }
+  }
+
+  .active {
+    color: color(cta);
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 14.5em;
+    margin: 0 auto;
+
+    @include media(medium) {
+      margin: 0;
+      flex-wrap: nowrap;
+      max-width: initial;
+    }
+  }
+
+  li {
+    flex: 0 1 50%;
+    font-size: 2.5em;
+
+    @include media(medium) {
+      font-size: 2em;
+    }
+
+    &:nth-child(odd) {
+      text-align: left;
+    }
+
+    &:nth-child(even) {
+      text-align: right;
+    }
+    a {
+      padding: 15px 0 0;
+      text-shadow: 2px 2px 1px #242934;
+
+      @include media(medium) {
+        padding: 15px 20px 0;
+      }
+    }
+  }
+}
+
+h1 {
+  margin-bottom: auto;
+  @include media(medium) {
+    margin-bottom: initial;
+  }
+}
+
+.logo {
+  filter: contrast(0) brightness(2) drop-shadow(2px 2px 1px rgba(color(dark), 0.5));
+  width: 100%;
+  display: block;
+  padding: 10px;
+  max-width: 450px;
+
+  @include media(medium) {
+    max-height: 72px;
+    width: initial;
+  }
+}
+
+.scrollMore {
+  margin: 1.3em;
+  text-transform: lowercase;
+  font-size: .9em;
+
+  @include media(medium) {
+    display: none;
+  }
+
+  &::after {
+    content: "\f107";
+    padding-left: .5em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// max-width defined for @extend %max;
+.maxwidth {
+  max-width: $max;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+
+  @include media(small) {
+    padding: 10px 20px;
+  }
+
+  @include media(medium) {
+    padding: 10px 40px;
+  }
+
+  &_video {
+    position: relative;
+    background-color: color(light);
+    top: -1px;
+
+    &_wrapper {
+      max-width: 1000px;
+      width: 100%;
+      padding: 10px;
+      margin: 0 auto;
+      position: relative;
+      height: 25vw;
+      z-index: 99;
+
+      @include media(small) {
+        padding: 10px 20px;
+      }
+
+      @include media(medium) {
+        padding: 10px 40px;
+        height: 400px;
+      }
+    }
+  }
+}
+
+// body
+.maxwidth {
+  justify-content: center;
+}
+
+body {
+  background: color(dark);
+  max-width: calc(#{$max} + 400px);
+  margin: 0 auto;
+  position: relative;
+
+  p,
+  q {
+    line-height: 1.5;
+    margin: .75em 0;
+  }
+
+  > section {
+    position: relative;
+    margin-top: 15vw;
+    padding: 20px 0;
+
+    &:last-of-type {
+      padding-bottom: 15vw;
+    }
+
+    &:first-of-type {
+      @include media(large) {
+        margin-top: 10vw;
+      }
+    }
+
+    &:nth-of-type(odd) {
+      background: color(light);
+      color: color(dark);
+
+      h2 {
+        font: bold 2.25em/1.2 font(display);
+        margin-bottom: .2em;
+        background: linear-gradient(to right, grad(dark));
+        filter: drop-shadow(2px 2px #BDE8E3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &::before {
+        background-image: url("../images/lightBorder.svg");
+      }
+    }
+
+    &:nth-of-type(even) {
+      background: color(dark);
+      color: color(light);
+
+      h2 {
+        font: bold 2.25em/1.2 font(display);
+        margin-bottom: .2em;
+        background: linear-gradient(to right, grad(light));
+        filter: drop-shadow(2px 2px #242934);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &::before {
+        background-image: url("../images/darkBorder.svg");
+      }
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 15vw;
+      max-height: 300px;
+      background-size: 102%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -14.5vw;
+
+      @include media(massive) {
+        top: -10vw;
+      }
+    }
+  }
+}
+
+// formats for styles
+.b-i {
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.b {
+  font-weight: bolder;
+}
+
+.i {
+  font-style: italic;
+}
+
+q {
+  font-weight: bolder;
+}
+
+// call to action buttons
+.cta {
+  border-radius: 5px;
+  transition: .25s;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  position: relative;
+  z-index: 1;
+
+  &.primary {
+    background: color(cta);
+    color: white;
+    font-weight: 900;
+    padding: .75em;
+    box-shadow: inset -1px -3px 0 rgba(color(dark), 0.25);
+    border: 0;
+    line-height: 1.5;
+    margin: .75em 0;
+  }
+
+  &.secondary {
+    border: color(cta) 2px solid;
+    color: color(cta);
+    font-weight: 600;
+    padding: .1em;
+    line-height: 1.5;
+    margin: .5em 0;
+
+    &::after {
+      content: "\f105";
+      padding-left: .5em;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.025);
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: scale(0.975);
+    filter: brightness(0.9);
+  }
+}
+
+// footer
+footer {
+  position: relative;
+  padding-bottom: 1em;
+  align-items: center;
+
+  @include media(medium) {
+    display: flex;
+  }
+
+  .maxwidth {
+    @include media(large) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  &::before {
+    display: block;
+    background-image: url("../images/footer.svg");
+    content: "";
+    width: 100vw;
+    height: 10vw;
+    background-size: 101%;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -10vw;
+  }
+
+  p {
+    text-align: center;
+    color: color(light);
+    line-height: 1.2;
+
+    @include media(medium) {
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  p:last-child {
+    width: col(10);
+
+    @include media(medium) {
+      width: col(4.5);
+      margin-right: col(0.5);
+    }
+
+    @include media(large) {
+      width: col(4);
+    }
+  }
+
+  form {
+    width: col(10);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include media(medium) {
+      flex-direction: row;
+      margin-bottom: 1em;
+    }
+
+    @include media(large) {
+      width: col(6);
+      order: 1;
+
+    }
+  }
+
+  #email {
+    background: white;
+    width: 100%;
+    border-radius: 5px;
+    padding: .75em .5em;
+    font-size: 1rem;
+    border: color(light) 2px solid;
+    color: color(dark);
+
+    @include media(medium) {
+      flex: 7;
+      margin-right: 20px;
+    }
+
+    &:not(:placeholder-shown) {
+      border: color(cta) 2px solid;
+    }
+  }
+
+  input.cta.primary {
+    @include media(medium) {
+      flex: 3;
+      margin: 0;
+    }
+  }
+
+  nav {
+    margin-top: 1em;
+    width: col(10);
+
+    @include media(medium) {
+      width: col(5);
+      order: 1;
+    }
+
+    @include media(large) {
+      width: col(3);
+      margin-right: 20px;
+      order: initial;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      display: inline-block;
+      padding: 5vw;
+      font-size: 40px;
+      color: color(light);
+
+      @include media(medium) {
+        padding: 0 20px;
+        font-size: 3em;
+      }
+    }
+
+  }
+
+  small {
+    font-size: .65em;
+    font-weight: 100;
+  }
+}
