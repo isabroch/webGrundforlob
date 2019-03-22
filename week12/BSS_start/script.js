@@ -1,13 +1,11 @@
 /* Goals:
-- Dropdown menu on click
-- Read more ('Read more..' and 'Read less..')
-- Gallery using arrows, thumbnails, and keyboard. 
-  Border should be around the 'active' thumbnail. 
-- Add a validated form from form.txt
-- Read more and dropdowns should only be there if JS is active, dvs. if no JS, menu and readmore text should be shown by default.
+//// Dropdown menu on click
+//// Read more ('Read more..' and 'Read less..')
+//// Gallery using arrows, thumbnails, and keyboard. Border should be around the 'active' thumbnail. 
+//// Read more and dropdowns should only be there if JS is active, dvs. if no JS, menu and readmore text should be shown by default.
 */
 
-// Dropdown menu
+//> Dropdown menu
 const allSubMenus = document.querySelectorAll('.mainMenu > ul');
 const allMenuItems = document.querySelectorAll('.mainMenu > a');
 
@@ -40,7 +38,7 @@ if (allSubMenus) {
   });
 }
 
-// Read more
+//> Read more
 const readMoreButton = document.querySelector('#readmore');
 const readMoreText = document.querySelector('#ekstra');
 
@@ -63,7 +61,7 @@ if (readMoreButton) {
   });
 }
 
-// Gallery
+//> Gallery
 const activeImage = document.querySelector('#photo');
 const leftArrow = document.querySelector('#backarrow');
 const rightArrow = document.querySelector('#forwardsarrow')
