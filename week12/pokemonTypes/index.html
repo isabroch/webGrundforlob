@@ -17,14 +17,21 @@
     fieldset {
       width: max-content;
     }
+
+    span {
+      font-style: italic;
+    }
   </style>
+
+  <script src="types.js" defer></script>
 </head>
 
 <body>
-  <form onsubmit="return false;">
+  <form id="pokeForm" onsubmit="return false;">
     <fieldset>
       <legend>My Pokemon Is...</legend>
       <select name="type1" id="type1">
+        <option value="pokeDefault"></option>
         <option value="normal">normal</option>
         <option value="fire">fire</option>
         <option value="fighting">fighting</option>
@@ -46,6 +53,7 @@
       </select>
       and
       <select name="type2" id="type2">
+        <option value="pokeDefault"></option>
         <option value="normal">normal</option>
         <option value="fire">fire</option>
         <option value="fighting">fighting</option>
@@ -69,8 +77,8 @@
     </fieldset>
   </form>
 
-  <div id="pokeInfo">My pokemon is...<br>
-    
+  <div id="pokeInfo">
+        
   </div>
 </body>
 
