@@ -17,10 +17,17 @@
     #thumbs img{
         width:10%;
     }
-    #hovedfoto{
-        display:none;	
+    .hidden {
+        display: none;
+    }
+    .thumb {
+        opacity: 0.5;
+    }
+    .active {
+        opacity: 1;
     }
 </style>
+<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -43,7 +50,7 @@
 </div>
 
 <div>
-	<img id="hovedfoto" src="#" alt="Folegandros">
+	<img id="hovedfoto" class="hidden" src="#" alt="Folegandros">
 </div>
 
 </div><!-- end wrapper -->

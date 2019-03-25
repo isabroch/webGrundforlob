@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anonymous Functions</title>
+<style>
+    #wrapper{
+        max-width:960px;
+        margin:0 auto;
+    }
+    *{
+        box-sizing:border-box;
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+    }
+    h1{
+        font-size:1.5em;
+    }
+    .right{
+        text-align: right;
+        color:#666;
+        font-style:italic;
+    }
+    h2, p{
+        margin:0;
+        padding:0;
+    }
+    h2{
+        font-size:1.2em;
+    }
+    section{
+        margin:1em 0;
+    }
+    span{
+        font-style: italic;
+    }
+    .btn, .fotos{
+        text-align:center;
+        margin-top:2em;
+    }
+    button{
+        font-size:1.5em;
+        cursor:pointer;
+    }
+    #message{
+        font-size:1.5em;
+        color:#F00;
+    }
+    .fotos{
+        display:flex;
+    }
+    .fotos img{
+        width:100%;
+        height:auto;
+        cursor:pointer;
+        padding:1%;
+    }
+</style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Anonymous Functions (JavaScript)</h1>
+            <p class="right">Fase 1 - 4 i plenum.</p>
+        </header>
+        
+        <main>
+            <section>
+                <h2>Fase 1</h2>
+                <p>Den røde tekst skal udskiftes med "Hello World!" når man klikker på knappen:</p>
+                <p>Giv knappen en eventListener som kalder en selvstændig funktion (som vi plejer).</p>
+                <p>Skriv den function som udskifter teksten.</p>
+                <p>Billederne i bunden skal ikke gør noget - endnu.</p>
+            </section>
+            <section>
+                <h2>Fase 2</h2>
+                <p>Comment ud koden.</p>
+                <p>Med en ny <span>eventListener</span>, erstat funktionskaldet med en <span>anonymous function</span> som gør det samme.</p>
+            </section>
+            <section>
+                <h2>Fase 3</h2>
+                <p>Giv den nye <span>(anonymous)</span> function en parameter (e)</p>
+                <p>I stedet for "Hello World!!" skal teksten nu skiftes til <span>e</span>  - så kan vi se hvad <span>e</span> er.</p>
+            </section>
+            <section>
+                <h2>Fase 4</h2>
+                <p>Teksten skal nu skiftes til <span>e.target</span> - så kan vi se hvad <span>e.target</span> er.</p>
+            </section>
+            <section>
+                <h2>Øvelse:</h2>
+                <p class="right">Øvelsen laves først individuelt. Sammenlign senere med en makker.</p>
+                <p>Når man klikker på et foto, skal billedets navn (som står i <span>alt</span>-attributtet) vises i det røde tekstfelt.</p>
+                <p>Brug en <span>anonymous function</span>.</p>
+            </section>
+            
+            <section class="btn">
+                <button>Click Me</button>
+                <p id="message">Her skal der ske noget.</p>
+            </section>
+        </main>
+        
+        <section class="fotos">
+            <div><img src="images/folegandros_chapel.jpg" alt="Chapel"/></div>
+            <div><img src="images/folegandros_chora.jpg" alt="Chora"/></div>
+            <div><img src="images/folegandros_churchyard.jpg" alt="Churchyard"/></div>
+            <div><img src="images/folegandros_narrowStreet.jpg" alt="Street"/></div>
+        </section>
+    </div> <!-- end wrapper -->
+
+    <script>
+       
+        
+    </script>
+</body>
+</html>
