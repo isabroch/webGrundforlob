@@ -4,6 +4,27 @@
 <meta charset="UTF-8">
 <title>Read More JQuery</title>
 <link href="humpty.css" rel="stylesheet">
+
+<!-- jquery -->
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<!-- own code -->
+<script>
+    $(function(){ // short for when document is ready (dvs only runs after html is loaded)
+        $('#knap').click(() => { // on click event listener
+            $('#xtra').slideToggle(200, () => { // toggle animation of xtra, ms and function
+                if($("#xtra").is(":visible")) {
+                    $("#knap").text("Læs mindre..."); // change inner text
+                } else {
+                    $("#knap").text("Læs mere...");
+                }
+            });
+        });
+    });
+</script>
 </head>
 
 <body>
