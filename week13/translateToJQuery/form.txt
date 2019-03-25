@@ -1,0 +1,13 @@
+Formular:
+
+Please add me to the mailing list
+
+Name*
+Cell*
+Email*
+Alder*
+Country[Select from dropdown list]: USA, Canada, Other
+
+Send
+
+*Required fields [skal valideres - IKKE med HTML5 validering]

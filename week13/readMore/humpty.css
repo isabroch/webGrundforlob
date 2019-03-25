@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*tving alle browsere til at gøre plads til scrollbar, så siden ikke hopper til venstre når den bliver længere :  */
+html{
+    overflow-y:scroll;  
+    -moz-scrollbars:vertical;
+}
+
+/*almen css for siden :  */
+*{
+    box-sizing:border-box;
+}
+#wrapper{
+    max-width:900px; 
+    margin:0 auto; 
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-size:0.9em;
+}
+header{
+    height:4em; 
+    text-align:center;
+}
+h1{
+    font-size:1.2em;
+}
+h3{
+    font-size:1.1em;
+}
+img{
+    border:solid 1px #000;
+    width:100%;
+}
+section, header, footer{
+    margin:0.5%;
+    padding:0.5%;
+}
+section, footer{
+    border: solid 1px #666;
+}
+section{
+    background-color:#EEE; 
+}
+main{
+    display:flex;
+}
+#afsnit1, #afsnit3{ 
+    flex:1;
+}
+#afsnit2 { 
+    flex:2;
+}
+footer {
+    background-color:#CCC; 
+    height:2em; 
+}
+
+/*for "læs mere" :  */
+#xtra{
+    display:none; 
+    padding:0; 
+    margin:0;
+}
+#knap{
+    cursor:pointer; 
+    color:#00C;
+}
