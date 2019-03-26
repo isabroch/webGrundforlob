@@ -75,9 +75,9 @@ $(() => { // shorthand for $(document).ready();
       }
 
       let src = $('.thumbs img').eq(index).attr('src');
-      $('#photo').fadeOut(200, function() {
-        $('#photo').attr('src', src).fadeIn(200)
-      });
+      $('#photo').fadeTo(200, 0.5, function() {
+        $('#photo').attr('src', src)
+      }).fadeTo(200, 1);
 
       $('.thumbs img').removeClass('active');
       $('.thumbs img').eq(index).addClass('active');
