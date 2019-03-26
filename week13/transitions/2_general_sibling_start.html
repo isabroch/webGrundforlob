@@ -52,6 +52,7 @@
             left:-550px;
             top:0;
             height: 750px;
+            transition: 750ms ease;
         }
 
         h3 { font-size: 4rem;
@@ -59,6 +60,11 @@
             padding:0 2rem 0 2rem;
             opacity:.5;
             text-align: right;
+        }
+
+        a:hover ~ div {
+            transform: translateX(400px);
+            transition: 300ms ease;
         }
         
 
