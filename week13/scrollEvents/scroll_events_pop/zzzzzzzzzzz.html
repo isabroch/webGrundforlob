@@ -1,291 +1,368 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Slide_ind_med_javascript_scroll_bottom_uden gentagelse</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
 
-        <style>
-            * {
-                margin:0;
-                padding:0;}
+<head>
+    <title>Slide_ind_med_javascript_scroll_bottom_uden gentagelse</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-            body {
-                font-family : Helvetica;
-            }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-            a { text-decoration: none;}
+        body {
+            font-family: Helvetica;
+        }
 
-            article {
-                width:80%;
-                max-width:1024px;
-                min-width: 900px;
-                margin: 0 auto;
-                position: relative}
+        a {
+            text-decoration: none;
+        }
 
-            
+        article {
+            width: 80%;
+            max-width: 1024px;
+            min-width: 900px;
+            margin: 0 auto;
+            position: relative
+        }
 
-            header {
-                background : rgba(0, 185, 172, 1);
-                width : 100%;
-                height : 183px;
-                text-align: center;
-                position:fixed;
-                z-index: 10;
-                top:0;
-                transition: .5s  ease-in-out;
-            }
-            header article > img {
-                width:179px;
-                position: absolute;
-                left:50%;
-                top:80px;
-                margin-left: calc((179px / 2)*-1);
-                transition: .5s }
 
-            
 
-            header div {
-                position: absolute;
-                top:80px;
-                right:0;
-                transition:.5s;
-                -webkit-opacity:1}
+        header {
+            background: rgba(0, 185, 172, 1);
+            width: 100%;
+            height: 183px;
+            text-align: center;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            transition: .5s ease-in-out;
+        }
 
-            header.minimer div {
-                opacity:0;
-                top:60px}
+        header article>img {
+            width: 179px;
+            position: absolute;
+            left: 50%;
+            top: 80px;
+            margin-left: calc((179px / 2)*-1);
+            transition: .5s
+        }
 
-            header div input {
-                border:none;
-                display:block;
-                background : rgba(169, 245, 239, 1);
-                width : 204px;
-                height : 26px;
-                float:left;}
 
-            header div img {
-                display:block;
-                width: 40px;}
 
-            header nav {
-                opacity:1;
-                transition: .5s  ;
-            }
-			header nav li {
-                text-align: center;
-                width:10%;
-                display:inline-block;
-                list-style: none;
-                transform:translateY(140px);
-                transition:.5s ;
-            }
-            header nav li:nth-child(3) {
-                margin-right: 30%;
-			}
-            header nav li:last-child {
-                margin-right: 0
-			}
-            header nav a {
-                font-family : Helvetica;
-                font-weight : bold;
-                font-size : 18px;
-                color:#fff;
-            }
-            section:nth-child(2) {
-                padding-top: 200px;
-                background: #fff;
-            }
-            
-            section:nth-child(2) article {
-                text-align: center;
-            }
-            
-			section:nth-child(2) figure {
-                background: #1e2b3d;
-                padding:20px;
-            	width:40%;
-           		margin: 40px auto 60px;
-			}
-            
-            section figure img {
-            max-width:100%
-			}
+        header div {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            transition: .5s;
+            -webkit-opacity: 1
+        }
 
-            h1, h2 {
-                font-weight : bold;
-                font-size : 48px;
-                color : #FF7800;
-                color : rgb(255, 120, 0);
-                text-align: center;
-                margin:120px auto 0;
-                width:80%
-			}
-            
-			h2 {
-                font-size : 24px;
-                color : #48515E;
-                color : rgb(72, 81, 94);
-                margin-top:40px;}
+        .minimer {
+            transform: translateY(-40px);
+            height: 140px;
+        }
 
-            section:nth-child(3){
-                background : #48515E;
-                background : rgba(72, 81, 94, 1);
-                height : 299px;}
+        header.minimer div {
+            opacity: 0;
+            top: 60px;
+        }
 
-            section:nth-child(3) article li {
-                list-style: none;
-                text-align: justify;
-                display:block;
-                float:left;
-                width:20%;
-                margin:40px 2.5% 20px 2.5%;
-                float:left;
-                padding-top: 15px;
-                border-top: 5px solid #00B9AC;}
+        header.minimer nav {
+            opacity: 0;
+        }
 
-            p {
-                font-family : Helvetica;
-                font-size : 14px;
-                line-height: 17px;
-                color : #FFFFFF;
-                color : rgb(255, 255, 255);}
-            
-			footer {
-                width:100%;
-                background: #48515E url(images/footer-bgr-2.png) no-repeat 50% 0;
-                padding-bottom: 30px;
-            } 
-			
-            footer p {
-                text-align: center;
-                padding-top: 100px;
-                width:60%;
-                margin:0 auto;
-                font-family : Helvetica;
-                font-weight : bold;
-                font-size : 18px;
-                color : #A9F5EF;
-                color : rgb(169, 245, 239);
-                line-height: 26px;
-			}
-            
-			footer img {
-                width:16%;
-                opacity:.8;
-                display: block;
-                margin: 40px auto;
-			}
-			
-			/* pop-in box*/
-            div#pop-ind {                 
-                background : rgba(72, 81, 94, 1);
-                border-style : Solid;
-                border-color : rgba(124, 174, 194, 1);
-                border-width : 4px;
-                width : 374px;
-                height : 245px;
-                position:fixed;
-                top:400px;
-                right:-450px;
-                padding:30px;
-                opacity:0;
-                box-shadow: 10px 10px 30px rgba(0,0,0,.2);
-			}
-            
-            div#pop-ind h3 {
-                font-size : 24px;
-                color : #CC6000;
-                color : rgb(204, 96, 0);
-			}
+        header.minimer nav li {
+            transform: translateY(100px);
+        }
 
-            div#pop-ind h3 span {
-                color:rgba(190,82,0, 1);
-                display:block;
-			}
+        header.minimer article>img {
+            width: 100px;
+            margin-left: calc((100px / 20)*-8);
+        }
 
-            div#pop-ind p {
-                font-weight : bold;
-                font-size : 14px;
-                margin-top:40px;
-                line-height: 22px;
-                margin-bottom: 30px;
-                width:300px;
-			}
-			
-            div#pop-ind button {
-                background : rgba(0, 185, 172, 1);
-                width : 120px;
-                height : 40px;
-                padding: 10px;
-                border:none;
-                font-weight : bold;
-                color:#fff;
-                font-size : 18px;
-            }
-            a[-data-interact="luk"] {
-                display: block;
-                background-image : url(images/luk_knap.svg);
-                background-repeat : no-repeat;
-                width : 34px;
-                height : 34px;
-                position: absolute;
-                right:-15px;
-                top:-15px;
-            }
+        header div input {
+            border: none;
+            display: block;
+            background: rgba(169, 245, 239, 1);
+            width: 204px;
+            height: 26px;
+            float: left;
+        }
 
-        </style>
+        header div img {
+            display: block;
+            width: 40px;
+        }
 
-        <script src="http://code.jquery.com/jquery-3.3.1.min.js"	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>
+        header nav {
+            opacity: 1;
+            transition: .5s;
+        }
 
-        <script src="script.js"></script>
-        
-    </head>
-    <body>
-        <header>
-            <article>
-                <img src="images/logo.svg"> 
-                <div><input type="text" > <img  src="images/lup.svg"> </div>
-                <nav>
-                    <ul>
-                        <li><a href="#">wordwide</a></li>
-                        <li><a href="#">local</a></li>
-                        <li><a href="#">viewpoint</a></li>
-                        <li><a href="#">season</a></li>
-                        <li><a href="#">subsets</a></li>
-                        <li><a href="#">storage</a></li>
-                    </ul>
-                </nav>
-            </article>
-        </header>
+        header nav li {
+            text-align: center;
+            width: 10%;
+            display: inline-block;
+            list-style: none;
+            transform: translateY(140px);
+            transition: .5s;
+        }
 
-        <section><article><h1>Phasellus dui maecenas facilisis nisl vitae nibh</h1>
-            <h2>Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. </h2>
+        header nav li:nth-child(3) {
+            margin-right: 30%;
+        }
+
+        header nav li:last-child {
+            margin-right: 0
+        }
+
+        header nav a {
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        section:nth-child(2) {
+            padding-top: 200px;
+            background: #fff;
+        }
+
+        section:nth-child(2) article {
+            text-align: center;
+        }
+
+        section:nth-child(2) figure {
+            background: #1e2b3d;
+            padding: 20px;
+            width: 40%;
+            margin: 40px auto 60px;
+        }
+
+        section figure img {
+            max-width: 100%
+        }
+
+        h1,
+        h2 {
+            font-weight: bold;
+            font-size: 48px;
+            color: #FF7800;
+            color: rgb(255, 120, 0);
+            text-align: center;
+            margin: 120px auto 0;
+            width: 80%
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #48515E;
+            color: rgb(72, 81, 94);
+            margin-top: 40px;
+        }
+
+        section:nth-child(3) {
+            background: #48515E;
+            background: rgba(72, 81, 94, 1);
+            height: 299px;
+        }
+
+        section:nth-child(3) article li {
+            list-style: none;
+            text-align: justify;
+            display: block;
+            float: left;
+            width: 20%;
+            margin: 40px 2.5% 20px 2.5%;
+            float: left;
+            padding-top: 15px;
+            border-top: 5px solid #00B9AC;
+        }
+
+        p {
+            font-family: Helvetica;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+            color: rgb(255, 255, 255);
+        }
+
+        footer {
+            width: 100%;
+            background: #48515E url(images/footer-bgr-2.png) no-repeat 50% 0;
+            padding-bottom: 30px;
+        }
+
+        footer p {
+            text-align: center;
+            padding-top: 100px;
+            width: 60%;
+            margin: 0 auto;
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 18px;
+            color: #A9F5EF;
+            color: rgb(169, 245, 239);
+            line-height: 26px;
+        }
+
+        footer img {
+            width: 16%;
+            opacity: .8;
+            display: block;
+            margin: 40px auto;
+        }
+
+        /* pop-in box*/
+        div#pop-ind {
+            background: rgba(72, 81, 94, 1);
+            border-style: Solid;
+            border-color: rgba(124, 174, 194, 1);
+            border-width: 4px;
+            width: 374px;
+            height: 245px;
+            position: fixed;
+            top: 400px;
+            right: -450px;
+            padding: 30px;
+            opacity: 0;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, .2);
+
+            transform: translateX(0);
+            transition: .5s ease-in-out;
+        }
+
+        div#pop-ind h3 {
+            font-size: 24px;
+            color: #CC6000;
+            color: rgb(204, 96, 0);
+        }
+
+        div#pop-ind h3 span {
+            color: rgba(190, 82, 0, 1);
+            display: block;
+        }
+
+        div#pop-ind p {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 40px;
+            line-height: 22px;
+            margin-bottom: 30px;
+            width: 300px;
+        }
+
+        div#pop-ind button {
+            background: rgba(0, 185, 172, 1);
+            width: 120px;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            font-weight: bold;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        a[-data-interact="luk"] {
+            display: block;
+            background-image: url(images/luk_knap.svg);
+            background-repeat: no-repeat;
+            width: 34px;
+            height: 34px;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+        }
+
+        div#pop-ind.slide_pop_ind {
+            transform: translateX(-50vw);
+            opacity: 1;
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>
+
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <article>
+            <img src="images/logo.svg">
+            <div><input type="text"> <img src="images/lup.svg"> </div>
+            <nav>
+                <ul>
+                    <li><a href="#">wordwide</a></li>
+                    <li><a href="#">local</a></li>
+                    <li><a href="#">viewpoint</a></li>
+                    <li><a href="#">season</a></li>
+                    <li><a href="#">subsets</a></li>
+                    <li><a href="#">storage</a></li>
+                </ul>
+            </nav>
+        </article>
+    </header>
+
+    <section>
+        <article>
+            <h1>Phasellus dui maecenas facilisis nisl vitae nibh</h1>
+            <h2>Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc
+                adipiscing euismod arcu. Quisque facilisis mattis lacus. </h2>
             <figure><img src="images/zodiac-assets/zodiac4.png" alt="#"></figure>
             <h2>Fusce quis lectus quis sem lacinia nonummy</h2>
-            <p>Mauris eu nisl. Nam pharetra nisi nec enim. Nulla aliquam, tellus sed laoreet blandit, eros urna vehicula lectus, et vulputate mauris arcu ut arcu. Praesent eros metus, accumsan a, malesuada et, commodo vel, nulla. Aliquam sagittis auctor sapien. </p>
-            </article></section>
+            <p>Mauris eu nisl. Nam pharetra nisi nec enim. Nulla aliquam, tellus sed laoreet blandit, eros urna vehicula
+                lectus, et vulputate mauris arcu ut arcu. Praesent eros metus, accumsan a, malesuada et, commodo vel,
+                nulla. Aliquam sagittis auctor sapien. </p>
+        </article>
+    </section>
 
-        <section><article>
+    <section>
+        <article>
             <ul>
-                <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p></li>
-                <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p></li>
-                <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p></li>
-                <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p></li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia
+                        nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio.
+                        Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia
+                        nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio.
+                        Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia
+                        nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio.
+                        Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia
+                        nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio.
+                        Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
+                </li>
             </ul>
-            </article>
-        </section>
-        <section><footer>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
+        </article>
+    </section>
+    <section>
+        <footer>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy.
+                Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue.
+                Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
             <img src="images/social.svg" alt="#">
-            </footer>
-        </section>
-        <div id="pop-ind">
-            <h3>Phasellus dui maecenas <span>facilisis nisl vitae nibh!</span></h3>
-            <p>Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. </p>
-            <button>JA TAK!</button>
-            <a href="#" -data-interact="luk"></a>
-        </div>
-    </body>
+        </footer>
+    </section>
+    <div id="pop-ind">
+        <h3>Phasellus dui maecenas <span>facilisis nisl vitae nibh!</span></h3>
+        <p>Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc
+            adipiscing euismod arcu. Quisque facilisis mattis lacus. </p>
+        <button>JA TAK!</button>
+        <a href="#" -data-interact="luk"></a>
+    </div>
+</body>
+
 </html>
