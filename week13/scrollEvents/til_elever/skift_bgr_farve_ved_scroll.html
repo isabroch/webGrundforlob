@@ -1,102 +1,150 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Skift baggrundsfarve ved scroll</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
 
-        <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-        <script>
-			
-           // Her skal du skrive din kode...
-			
-        </script>
-        <style>
+<head>
+    <title>Skift baggrundsfarve ved scroll</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script>
+        var farve_1 = "#4c6680";
+        var farve_2 = "#a0b8cf";
+        var farve_3 = "#e07f21";
+        var farve_4 = "#d54215";
+        $(window).on("scroll touchmove", function () {
+            if ($(document).scrollTop() == 0) {
+                $('body').css({
+                    'background': '#578088'
+                });
+            };
+            if ($(document).scrollTop() >= $("header+section").position().top) {
+                $('body').css({
+                    'background': farve_1
+                });
+            };
+            if ($(document).scrollTop() > $("section:nth-child(3)").position().top) {
+                $('body').css({
+                    'background': farve_2
+                });
+            };
+            if ($(document).scrollTop() > $("section:nth-child(4)").position().top) {
+                $('body').css({
+                    'background': farve_3
+                });
+            };
+            if ($(document).scrollTop() > $("section:last-child").position().top) {
+                $('body').css({
+                    'background': farve_4
+                });
+            };
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            body {
-                text-align: center;
-                background: #578088;
-                color: #fff;
-                margin: 0;
-                transition: 1s;
-                padding-bottom:1px;
-            }
-            header {
-                background:#2a2d3b;
-                padding:3rem;
-            }
+        body {
+            text-align: center;
+            background: #578088;
+            color: #fff;
+            margin: 0;
+            transition: 1s;
+            padding-bottom: 1px;
+        }
 
-            header img {
-                width:200px;}
+        header {
+            background: #2a2d3b;
+            padding: 3rem;
+        }
 
-            section {
-                display: block;
-                padding-top: 3rem;
-                width: 100%;
-                height: 100vh;
-            }
+        header img {
+            width: 200px;
+        }
 
-            section article {
-                width:70%;
-                margin: 0 auto;
-            }
+        section {
+            display: block;
+            padding-top: 3rem;
+            width: 100%;
+            height: 100vh;
+        }
 
-            h2 {
-                text-transform: uppercase;
-                font-family: helvetica neue, verdana;
-                font-size: 3rem;}
+        section article {
+            width: 70%;
+            margin: 0 auto;
+        }
 
-            h2 span {
-                opacity:.7;
-                font-size: 6rem;
-            }
+        h2 {
+            text-transform: uppercase;
+            font-family: helvetica neue, verdana;
+            font-size: 3rem;
+        }
 
-            article p {
-                text-align: justify;
-                color:rgba(255,255,255,.6);
-                font-size: 1.4rem;
-                padding-top: 2rem;
-                font-family: verdana
-            }
-        </style>
+        h2 span {
+            opacity: .7;
+            font-size: 6rem;
+        }
+
+        article p {
+            text-align: justify;
+            color: rgba(255, 255, 255, .6);
+            font-size: 1.4rem;
+            padding-top: 2rem;
+            font-family: verdana
+        }
+    </style>
 
 
-    </head>
-    <body>
-        <header><img src="billeder/logo.png" alt="logo"></header>
-        <section>
-            <article>
-                <h2>Section<br><span>1</span></h2>
-                <p>orem ipsum dolor sit amet, malesuada libero, risus massa, sit arcu nec fringilla habitant rhoncus, posuere vestibulum. Pellentesque aliquam mauris amet condimentum suspendisse, semper orci bibendum. Nibh dictum libero duis consequat, senectus wisi ligula porta, rhoncus sit id quis, nulla in turpis ultrices mi. Posuere duis dictum. Donec a in, nulla vivamus nullam, pellentesque vestibulum a penatibus eget. Leo hymenaeos porttitor congue.</p>
-            </article>
-        </section>
+</head>
 
-        <section>
-            <article>
-                <h2>Section<br><span>2</span></h2>
-                <p>Maecenas amet elit mauris nullam quam sapien, ullamcorper magna. Aspernatur suscipit at hendrerit, at viverra et ac, et et integer, feugiat mi dolor. Pede ac praesent et pellentesque, ut convallis. Mauris etiam at, dictum parturient conubia aliquam odio tempor. Elementum donec est ornare, et nesciunt eu massa leo vulputate pulvinar. Sit vitae, felis nullam turpis dolor sapien quis aenean, maecenas in torquent mi metus, erat interdum, wisi sollicitudin lectus quam suscipit nisi urna.</p>
-            </article>        
-        </section>
+<body>
+    <header><img src="billeder/logo.png" alt="logo"></header>
+    <section>
+        <article>
+            <h2>Section<br><span>1</span></h2>
+            <p>orem ipsum dolor sit amet, malesuada libero, risus massa, sit arcu nec fringilla habitant rhoncus,
+                posuere vestibulum. Pellentesque aliquam mauris amet condimentum suspendisse, semper orci bibendum. Nibh
+                dictum libero duis consequat, senectus wisi ligula porta, rhoncus sit id quis, nulla in turpis ultrices
+                mi. Posuere duis dictum. Donec a in, nulla vivamus nullam, pellentesque vestibulum a penatibus eget. Leo
+                hymenaeos porttitor congue.</p>
+        </article>
+    </section>
 
-        <section>
-            <article>
-                <h2>Section<br><span>3</span></h2>
-                <p>Porta purus ac, egestas justo a hac. Fringilla egestas urna fermentum, malesuada blandit molestie eget quis quam. Ac vestibulum aliquam. Fermentum sapien eget ut in, sociosqu ut consequat neque ante voluptatem, in elit enim laboris elementum ornare. Aliquam litora metus. Et posuere augue metus orci morbi, nunc lectus, nulla class pretium iaculis. </p>
-            </article>        
-        </section>
-        <section>
-            <article>
-                <h2>Section<br><span>4</span></h2>
-                <p>Metus non ipsum malesuada sed mauris, nec quis ut volutpat quam eu amet, quisque fermentum feugiat tellus. Mauris est, ultricies curae fusce, velit porta nonummy iaculis mauris. Eius erat, mattis felis urna porttitor arcu. Diam eget aliquet eleifend vehicula quis maecenas. Suspendisse elit turpis, lacus odio sed tempus vitae euismod sollicitudin, taciti id in gravida quam nam, consequat dui ut. At nunc facilisis quam quis, bibendum velit lectus quisque, lobortis quis quam. </p>
-            </article>       
-        </section>
+    <section>
+        <article>
+            <h2>Section<br><span>2</span></h2>
+            <p>Maecenas amet elit mauris nullam quam sapien, ullamcorper magna. Aspernatur suscipit at hendrerit, at
+                viverra et ac, et et integer, feugiat mi dolor. Pede ac praesent et pellentesque, ut convallis. Mauris
+                etiam at, dictum parturient conubia aliquam odio tempor. Elementum donec est ornare, et nesciunt eu
+                massa leo vulputate pulvinar. Sit vitae, felis nullam turpis dolor sapien quis aenean, maecenas in
+                torquent mi metus, erat interdum, wisi sollicitudin lectus quam suscipit nisi urna.</p>
+        </article>
+    </section>
 
-    </body>
+    <section>
+        <article>
+            <h2>Section<br><span>3</span></h2>
+            <p>Porta purus ac, egestas justo a hac. Fringilla egestas urna fermentum, malesuada blandit molestie eget
+                quis quam. Ac vestibulum aliquam. Fermentum sapien eget ut in, sociosqu ut consequat neque ante
+                voluptatem, in elit enim laboris elementum ornare. Aliquam litora metus. Et posuere augue metus orci
+                morbi, nunc lectus, nulla class pretium iaculis. </p>
+        </article>
+    </section>
+    <section>
+        <article>
+            <h2>Section<br><span>4</span></h2>
+            <p>Metus non ipsum malesuada sed mauris, nec quis ut volutpat quam eu amet, quisque fermentum feugiat
+                tellus. Mauris est, ultricies curae fusce, velit porta nonummy iaculis mauris. Eius erat, mattis felis
+                urna porttitor arcu. Diam eget aliquet eleifend vehicula quis maecenas. Suspendisse elit turpis, lacus
+                odio sed tempus vitae euismod sollicitudin, taciti id in gravida quam nam, consequat dui ut. At nunc
+                facilisis quam quis, bibendum velit lectus quisque, lobortis quis quam. </p>
+        </article>
+    </section>
+
+</body>
+
 </html>
