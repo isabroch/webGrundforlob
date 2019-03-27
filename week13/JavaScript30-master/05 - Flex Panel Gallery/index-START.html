@@ -24,6 +24,7 @@
     }
 
     .panels {
+      display: flex;
       min-height: 100vh;
       overflow: hidden;
     }
@@ -43,6 +44,14 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -55,9 +64,29 @@
     .panel > * {
       margin: 0;
       width: 100%;
-      transition: transform 0.5s;
+      transition: transform 0.8s;
+      padding: 10px 0;
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: center;
     }
 
+    .panel.open > * {
+      transition: transform 0.5s 0.5s;
+    }
+
+    .panel > *:first-child { flex: 1 0 auto;
+      transform: translateY(-100%); 
+      align-items: flex-end;
+      }
+    .panel > *:last-child { flex: 1 0 auto;
+      transform: translateY(100%); 
+      align-items: flex-start;
+      }
+
+    .panel.open > *:first-child { transform: translateY(0); }
+    .panel.open > *:last-child { transform: translateY(0); }
+    
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
@@ -71,6 +100,7 @@
 
     .panel.open {
       font-size: 40px;
+      flex: 5;
     }
 
   </style>
@@ -105,7 +135,22 @@
   </div>
 
   <script>
+    const panels = document.querySelectorAll('.panel');
 
+    function toggleOpen() {
+      if(this.classList.contains('open')) {
+        this.classList.remove('open');
+      } else {
+        panels.forEach(panel => {
+          panel.classList.remove('open');
+        });
+        this.classList.add('open');
+      }
+}
+
+    panels.forEach(panel => {
+      panel.addEventListener('click', toggleOpen)
+    });
   </script>
 
 
