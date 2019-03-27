@@ -7,6 +7,43 @@
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  /* styling line */
+  ctx.strokeStyle = '#BADA55'; //starting color
+  ctx.lineJoin = 'round'; //when lines meet, round
+  ctx.lineCap = 'round'; //end of line should be round
+  ctx.lineWidth = 5;
+
+  let isDrawing = false; //creating flag
+  let lastX = 0;
+  let lastY = 0;
+
+  function draw(e) {
+    if (!isDrawing) {
+      return; //stops function from running when not drawing
+    }
+    console.log(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY); //starting from
+    ctx.lineTo(e.offsetX, e.offsetY); //going to
+    ctx.stroke();
+
+    [lastX, lastY] = [e.offsetX, e.offsetY]
+  }
+  
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', () => isDrawing = false);
+  canvas.addEventListener('mouseout', () => isDrawing = false);
 </script>
 
 <style>
