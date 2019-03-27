@@ -31,28 +31,95 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    const bornFifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year <= 1599));
+    console.table(bornFifteen);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+    const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+    console.log(fullNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const byBirthday = inventors.sort((personA, personB) => personA.year > personB.year ? 1 : -1);
+    /* ---- LONG VERSION
+    const byBirthday = inventors.sort(function(personA, personB) {
+      if(personA.year > personB.year) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    */
+    console.table(byBirthday);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-
+    const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0)
+    /* ---- LONG VERSION
+    let totalYears = 0;
+    for (let i = 0; i < inventors.length; i++) { 
+      totalYears +=(inventors[i].passed - inventors[i].year); 
+    } 
+    */
+    console.log(totalYears); 
+    
     // 5. Sort the inventors by years lived
+    const oldestToYoungest = inventors.sort(function(personA, personB) {
+      const personAAge = personA.passed - personA.year;
+      const personBAge = personB.passed - personB.year;
+      // if(personAAge > personBAge) {
+      //   return -1;
+      // } else {
+      //   return 1;
+      // }
+      return (personAAge > personBAge) ? -1 : 1;
+    });
+    console.table(oldestToYoungest);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    /* ---- Can only run on wiki page
+    const links = document.querySelectorAll('.mw-category a');
+    const linksArray = Array.from(links);
 
+    const deBoulevards = linksArray
+                          .map(link => link.textContent)
+                          .filter(blvdName => blvdName.includes('de '));
+
+    console.log(deBoulevards) */
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const alphabeticalPeople = people.sort((personA, personB) => {
+      const [bLast, bFirst] = personB.split(', ');
+      const [aLast, aFirst] = personA.split(', ');
+      
+      // if(aLast > bLast) {
+      //   return 1;
+      // } else {
+      //   return -1;
+      // }
+
+      return (aLast > bLast) ? 1 : -1;
+    });
+    console.log(alphabeticalPeople);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'unicycle'];
+    
+    const transport = data.reduce(function(obj, item){
+      if(!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+
+    console.table(transport);
 
   </script>
 </body>
