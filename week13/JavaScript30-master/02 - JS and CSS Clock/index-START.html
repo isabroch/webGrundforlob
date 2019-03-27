@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+
+<body>
+
+
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+
+  <style>
+    html {
+      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* account for the height of the clock hands */
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.1s cubic-bezier(.18, .89, .4, 1.63);
+    }
+
+    .second-hand {
+      width: 50%;
+      height: 3px;
+      background: #000000;
+      z-index: 1;
+    }
+
+    .min-hand {
+      width: 40%;
+      margin-left: 10%;
+      height: 6px;
+      background: #000000;
+      z-index: 2;
+    }
+
+    .hour-hand {
+      width: 30%;
+      margin-left: 20%;
+      height: 6px;
+      background: #000000;
+      z-index: 3;
+    }
+
+    .fast {
+      transition: all 0s;
+    }
+  </style>
+
+  <script>
+    function setDate() {
+      const now = new Date();
+
+      const seconds = now.getSeconds();
+      const secondsDegrees = ((seconds / 60) * 360) + 90;
+      const secondHand = document.querySelector('.second-hand');
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+      if (seconds == 0) {
+        secondHand.classList.add('fast');
+      } else if (seconds == 1) {
+        secondHand.classList.remove('fast');
+      }
+
+      const minutes = now.getMinutes();
+      const minutesDegrees = ((minutes / 60) * 360) + 90;
+      const minuteHand = document.querySelector('.min-hand');
+      minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      if (minutes == 0) {
+        minuteHand.classList.add('fast');
+      } else if (minutes == 1) {
+        minuteHand.classList.remove('fast');
+      }
+
+      const hours = now.getHours();
+      const hoursDegrees = ((hours / 12) * 360) + 90;
+      const hourHand = document.querySelector('.hour-hand');
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+      if (hours == 12 || hours == 0) {
+        hourHand.classList.add('fast');
+      } else if (hours == 13 || hours == 1) {
+        hourHand.classList.remove('fast');
+      }
+      
+
+      // console.log(`${hours}:${minutes}:${seconds}`); // log the time
+    }
+
+    setInterval(setDate, 1000);
+  </script>
+</body>
+
+</html>

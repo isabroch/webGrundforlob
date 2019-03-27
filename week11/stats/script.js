@@ -39,7 +39,7 @@ function rollStats() {
   stat[1] = rolls; // Stores the 3 rolls that were kept.
   stat[2] = dropped; // Stores the roll that was dropped.
 
-  return stat[0]; // Returns the 3 stored values above as an array.
+  return stat; // Returns the 3 stored values above as an array.
 }
 
 // Assign the stat values to each of the 6 stats.
@@ -62,10 +62,25 @@ console.log(stats);
 let perfectSet = false;
 let attempts = 1;
 
-while (perfectSet == false) {
-  console.log(setStats());
-  perfectSet = stats.str >= 12 && stats.dex >= 12 && stats.con >= 12 && stats.int >= 12 && stats.wis >= 12 && stats.cha >= 12;
+while (perfectSet == false && attempts < 100000000) {
+  setStats();
+  // console.log(stats.str[0]+", "+stats.dex[0]+", "+stats.con[0]+", "+stats.int[0]+", "+stats.wis[0]+", "+stats.cha[0]);
+  perfectSet = stats.str[0] == 18 && stats.dex[0] == 18 && stats.con[0] == 18 && stats.int[0] == 18 && stats.wis[0] == 18 && stats.cha[0] == 18;
   attempts++;
+
+  function progress(num) {
+    if (attempts == num) {
+      console.log("You've reached " + num + " tries and still haven't gotten perfect stats.")
+    }
+  }
+
+  progress(100);
+  progress(1000);
+  progress(10000);
+  progress(100000);
+  progress(1000000);
+  progress(10000000);
+  progress(100000000);
 }
 
 if (perfectSet == true) {
@@ -82,7 +97,7 @@ for (const [key, value] of Object.entries(stats)) { // For loop that gets the ke
     const list = document.querySelector("#stats ul"); // The list that will hold the list item.
     const node = document.createElement("li"); // The element to put inside the list.
     node.idName = key.data; // Setting the ID of the new list item to the key (e.g. str).
-    const textNode = key + ": " + value/*[0] + " [" + value[1] + " - <span class='dropped'>" + value[2] + "</span>]"*/; // Expected example output "str: 17 [5,6,6 - 2]"
+    const textNode = key + ": " + value[0] + " [" + value[1] + " - <span class='dropped'>" + value[2] + "</span>]"; // Expected example output "str: 17 [5,6,6 - 2]"
     node.innerHTML = textNode; // Putting the text inside of the list item.
 
     list.insertAdjacentHTML('beforeend', node.outerHTML); // Inserting the list item with text at the end of, but still within, the list.
