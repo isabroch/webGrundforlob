@@ -84,3 +84,12 @@ const deathsByAges = [
   {Age: 'Total', Deaths: deaths.length}
 ]
 // console.table(deathsByAges);
+
+// > Console logging
+
+console.log('Number of deaths in each age group in March')
+console.table(deathsByAges);
+console.log('10 youngest and 10 oldest deaths in March')
+console.table(youngestAndOldest);
+console.log('All Americans that have died in March');
+console.table(americans);
